@@ -36,7 +36,46 @@ void	PhoneBook::AddContact(int i, Contact my_contact)
 	this->_contacts[i] = my_contact;
 }
 
-void	PhoneBook::get_infos(std::string user_entry, int index)
+void	PhoneBook::adding_option(std::string user_entry, PhoneBook *repertory)
 {
+	user_entry.clear();
+	Contact	newest;
 
+	std::cout << "First name : ";
+	std::cin.ignore();
+	std::getline(std::cin, user_entry);
+	if (user_entry.empty())
+		return ;
+	else
+		newest.setfirstname(user_entry);
+	std::cout << "Last name : ";
+	user_entry.clear();
+	std::getline(std::cin, user_entry);
+	if (user_entry.empty())
+		return ;
+	else
+		newest.setlastname(user_entry);
+	std::cout << "Nickname : ";
+	user_entry.clear();
+	std::getline(std::cin, user_entry);
+	if (user_entry.empty())
+		return ;
+	else
+		newest.setnickname(user_entry);
+	std::cout << "Phone Number : ";
+	user_entry.clear();
+	std::getline(std::cin, user_entry);
+	if (user_entry.empty())
+		return ;
+	else
+		newest.setnumbah(user_entry);
+	std::cout << "Your darkest secret : ";
+	user_entry.clear();
+	std::getline(std::cin, user_entry);
+	if (user_entry.empty())
+		return ;
+	else
+		newest.setsecret(user_entry);
+	this->_contacts[this->Nbcontact] = newest;
+	this->Nbcontact++;
 }

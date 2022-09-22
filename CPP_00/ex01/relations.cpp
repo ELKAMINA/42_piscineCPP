@@ -19,53 +19,10 @@ int	main()
 	{
 		if (user_entry.compare("ADD") == 0)
 		{
-			// std::cout << "Be careful! Empty information will quit the program" << std::endl;
-			user_entry.clear();
+			std::cout << "An empty entry will stop the form!" << std::endl;
 			if (repertory.Nbcontact >= 7)
 				repertory.Nbcontact = 0;
-			Contact	newest;
-			for (size_t i = 0; i < 4; i++)
-			{
-				std::cout << "First name : ";
-				std::cin.ignore();
-				std::getline(std::cin, user_entry);
-				if (user_entry.empty())
-					return (1);
-				else
-				{
-					newest.setfirstname(user_entry);
-				}
-				std::cout << "Last name : ";
-				user_entry.clear();
-				std::getline(std::cin, user_entry);
-				if (user_entry.empty())
-					return (1);
-				else
-					newest.setlastname(user_entry);
-				std::cout << "Nickname : ";
-				user_entry.clear();
-				std::getline(std::cin, user_entry);
-				if (user_entry.empty())
-					return (1);
-				else
-					newest.setnickname(user_entry);
-				std::cout << "Phone Number : ";
-				user_entry.clear();
-				std::getline(std::cin, user_entry);
-				if (user_entry.empty())
-					return (1);
-				else
-					newest.setnumbah(user_entry);
-				std::cout << "Your darkest secret : ";
-				user_entry.clear();
-				std::getline(std::cin, user_entry);
-				if (user_entry.empty())
-					return (1);
-				else
-					newest.setsecret(user_entry);
-				repertory.AddContact(repertory.Nbcontact, newest);
-			}
-			repertory.Nbcontact++;
+			repertory.adding_option(user_entry, &repertory);
 		}
 		else if (user_entry.compare("SEARCH") == 0)
 		{

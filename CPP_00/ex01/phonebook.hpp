@@ -11,8 +11,7 @@ class PhoneBook
 		Contact		getcontact(int index);
 		void		AddContact(int index, Contact c);
 		void		menu_PhoneBook( void );
-		std::string	infos[4];
-		void		get_infos(std::string user_entry, int index);
+		void		adding_option(std::string user_entry, PhoneBook *repertory);
 
 	
 	private :
