@@ -2,7 +2,7 @@
 #include "./contact.hpp"
 #include "./phonebook.hpp"
 
-PhoneBook::PhoneBook( void ) :  Nbcontact(0), add_form(false)
+PhoneBook::PhoneBook( void ) :  Nbcontact(0)
 {
 	// std::cout << "Constructor called" << std::endl;
 }
