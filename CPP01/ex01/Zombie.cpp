@@ -27,7 +27,7 @@ void Zombie::setindex(int index)
     this->index = index;
 }
 
-int Zombie::getindex( void )
+int Zombie::getindex( void ) const
 {
     return this->index;
 }

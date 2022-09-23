@@ -1,14 +1,14 @@
 NAME = Zombies
 
 SRC = main.cpp \
-	Zombie.cpp \
-	zombieHorde.cpp \
+		Zombie.cpp \
+		zombieHorde.cpp \
 
 OBJ = $(SRC:.cpp=.o)
 
 CC = c++
 
-FLAG = -g3 -Wall -Werror -Wextra -fsanitize=address -std=c++98 
+FLAG = -g3 -Wall -Werror -Wextra -fsanitize=address -std=c++98
 
 all : $(NAME)
 

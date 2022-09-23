@@ -9,7 +9,7 @@ class Zombie
         std::string     getname( void ) const;
         void            setname(std::string smiya);
         void            setindex(int i);
-        int             getindex( void );
+        int             getindex( void ) const;
     
     private : 
         int index;
