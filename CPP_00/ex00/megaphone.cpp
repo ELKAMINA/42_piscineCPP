@@ -13,6 +13,7 @@ int	main(int argc, char *argv[])
 			my_str = argv[i];
 			std::cout << my_str;
 		}
+		std::cout << std::endl;
 	}
 	else
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
