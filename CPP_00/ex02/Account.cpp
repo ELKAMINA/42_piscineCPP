@@ -9,4 +9,44 @@
 /*  dans les fct ou attributs non membres, quand on return, on return tel que :
 
 	return Sample:: _nbInst;
-	 */
+*/
+
+#include "./Account.hpp"
+#include <iostream>
+#include <string>
+
+Account::Account(int initial_deposit)
+{
+	std::cout << "Je suis le constructeur" << std::endl;
+	std::cout << "TIME A METTRE ICI";
+	std::cout << "index:"  << this->_accountIndex;
+	std::cout << ";amount:"  << this->_amount;
+	std::cout << ";created" << std::endl;  
+
+}
+
+Account::~Account( void )
+{
+	std::cout << "Je suis le destructeur" << std::endl;
+}
+
+
+
+
+
+
+static int	getNbAccounts( void );
+static int	getTotalAmount( void );
+static int	getNbDeposits( void );
+static int	getNbWithdrawals( void );
+static void	displayAccountsInfos( void );
+static void	_displayTimestamp( void );
+void	makeDeposit( int deposit );
+bool	makeWithdrawal( int withdrawal );
+int		checkAmount( void ) const;
+void	displayStatus( void ) const;
+
+static int	_nbAccounts = 0;
+static int	_totalAmount = 0;
+static int	_totalNbDeposits = 0;
+static int	_totalNbWithdrawals = 0;
