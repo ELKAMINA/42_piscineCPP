@@ -44,35 +44,45 @@ void	PhoneBook::adding_option(std::string user_entry, PhoneBook *repertory)
 	std::cout << "First name : ";
 	std::cin.ignore();
 	std::getline(std::cin, user_entry);
-	if (user_entry.empty())
+	if (std::cin.eof() )
+		exit(1) ;
+	else if (user_entry.empty())
 		return ;
 	else
 		newest.setfirstname(user_entry);
 	std::cout << "Last name : ";
 	user_entry.clear();
 	std::getline(std::cin, user_entry);
-	if (user_entry.empty())
+	if (std::cin.eof() )
+		exit(1) ;
+	else if (user_entry.empty())
 		return ;
 	else
 		newest.setlastname(user_entry);
 	std::cout << "Nickname : ";
 	user_entry.clear();
 	std::getline(std::cin, user_entry);
-	if (user_entry.empty())
+	if (std::cin.eof() )
+		exit(1) ;
+	else if (user_entry.empty())
 		return ;
 	else
 		newest.setnickname(user_entry);
 	std::cout << "Phone Number : ";
 	user_entry.clear();
 	std::getline(std::cin, user_entry);
-	if (user_entry.empty())
+	if (std::cin.eof() )
+		exit(1) ;
+	else if (user_entry.empty())
 		return ;
 	else
 		newest.setnumbah(user_entry);
 	std::cout << "Your darkest secret : ";
 	user_entry.clear();
 	std::getline(std::cin, user_entry);
-	if (user_entry.empty())
+	if (std::cin.eof() )
+		exit(1) ;
+	else if (user_entry.empty())
 		return ;
 	else
 		newest.setsecret(user_entry);

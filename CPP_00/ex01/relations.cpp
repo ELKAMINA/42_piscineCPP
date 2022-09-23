@@ -29,6 +29,10 @@ int	main()
 			std::cout << "Please enter the id of the contact you need : ";
 			std::cin.ignore();
 			std::getline(std::cin, user_entry);
+			if (std::cin.eof() )
+				exit(1) ;
+			else if (user_entry.empty())
+				user_entry = "KIKOU";
 			std::istringstream iss (user_entry);
 			iss >> id;
 			if (id < 0 || id > 7)
@@ -38,16 +42,21 @@ int	main()
 				Contact actual_c;
 				actual_c = repertory.getcontact(id);
 				actual_c.resize();
-				std::cout << std::left << std::setw(10) << id << "|" 
-					<< std::left << std::setw(10) << actual_c.getfirstname() << "|"
-					  << std::left << std::setw(10) << actual_c.getlastname() << "|" 
-					  << std::left << std::setw(10) << actual_c.getnickname()
+				std::cout << std::right << std::setw(10) << id << "|" 
+					<< std::right << std::setw(10) << actual_c.getfirstname() << "|"
+					  << std::right << std::setw(10) << actual_c.getlastname() << "|" 
+					  << std::right << std::setw(10) << actual_c.getnickname()
 				 			<< std::endl;
 			}
 		}
 		else if (user_entry.compare("EXIT") == 0)
 			exit(EXIT_SUCCESS);
+		user_entry.clear();
 		std::cout << "Something else ? ";
-		std::cin >> user_entry;
+		std::getline(std::cin, user_entry);
+		if (std::cin.eof())
+			exit(1) ;
+		else if (user_entry.empty())
+			user_entry = "KIKOU";
 	}
 }
