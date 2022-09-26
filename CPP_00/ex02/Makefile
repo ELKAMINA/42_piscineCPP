@@ -1,8 +1,7 @@
 NAME = accounting
-
-SRC = Account.cpp \
-	Account.hpp \
-	tests.cpp \
+	
+SRC = Account.cpp\
+		tests.cpp\
 
 OBJ = $(SRC:.cpp=.o)
 
