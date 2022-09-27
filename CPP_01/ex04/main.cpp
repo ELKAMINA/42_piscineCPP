@@ -30,6 +30,7 @@ int	main(int argc, char *arv[])
 			copy_file.open()
 			while (getline(file, temp))
 			{
+				
 				if	(temp.find(s1, std::string::npos)) // npos means until the end of the string.
 				{
 					std::cout << "THE STRING IS HEEEWEE!" << std::endl;
