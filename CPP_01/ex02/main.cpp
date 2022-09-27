@@ -23,5 +23,5 @@ int	main()
 	std::cout << "valeur  pointee par stringPTR ===> " << *stringPTR << std::endl;
 	
 	/* Afficher la valeur pointee par stringREF */
-	std::cout << "Adresse  pointee par stringREF ===> " << stringREF << std::endl;
+	std::cout << "Valeur pointee par stringREF ===> " << stringREF << std::endl;
 }
