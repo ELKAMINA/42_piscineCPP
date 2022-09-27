@@ -6,12 +6,12 @@ class HumanA
 {
 	public:
                 void    attack();
-                HumanA::HumanA(std::string namish);
+                HumanA::HumanA(Weapon WeaponA);
                 HumanA::~HumanA();
 
 	private :
                 std::string _name;
-                Weapon weaponA;
+                Weapon arme;
  
 };
 

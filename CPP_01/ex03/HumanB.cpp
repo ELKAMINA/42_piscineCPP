@@ -16,5 +16,5 @@ HumanB::~HumanB( void )
 
 void    HumanB::attack( void )
 {
-    std::cout << this->_name << "attacks with their " << this->weaponB.getType();
+    std::cout << this->_name << "attacks with their " << this->weapon.getType();
 }

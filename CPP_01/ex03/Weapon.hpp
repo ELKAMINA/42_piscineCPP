@@ -4,6 +4,7 @@
 class Weapon
 {
 	public:
+		Weapon::Weapon( void );
 		Weapon::Weapon(std::string weapon_name);
 		Weapon::~Weapon();
 		std::string&	const getType();

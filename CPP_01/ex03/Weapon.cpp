@@ -3,6 +3,12 @@
 #include <string>
 #include <iostream>
 
+/* Constructeur est une méthode */
+Weapon::Weapon ( void )
+{
+    
+}
+
 Weapon::Weapon ( std::string weapon_name )
 {
     
