@@ -1,9 +1,9 @@
-NAME = cerveau
+NAME = fileessssss
 
 SRC = main.cpp\
-	.cpp\
-	.cpp\
-	.cpp\
+	# .cpp\
+	# .cpp\
+	# .cpp\
 
 OBJ = $(SRC:.cpp=.o)
 
