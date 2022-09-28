@@ -38,36 +38,47 @@ int	main(int argc, char *arv[])
 		std::ifstream	file;
 		std::ofstream	file2;
 		std::string		newfile;
+		std::string		newstr;
 		std::string		s1;
 		std::string		s2;
 		std::string		temp;
+		bool			go;
+		size_t			pos;
+		size_t			size_s1;
+		size_t			size_s2;
+		size_t			start;
 
 		s1 = arv[2];
 		s2 = arv[3];
+		size_s1 = s1.size();
+		size_s2 = s2.size();
 		file.open(arv[1]);
+		go = true;
 		newfile = getting_filename(arv[1]);
-		std::cout << newfile << std::endl;
 		file2.open(newfile, std::ios::out);
 		if	(file.is_open())
 		{
 			if	(file2.is_open())
 			{
-				std::cout << "arv3" << s2 << std::endl;
-				std::string		input;
 				while (std::getline(file, temp))
 				{
-					std::cout << "TEMP : " << temp << std::endl;
-					if	(temp.find(s1) != std::string::npos) // npos means until the end of the string.
+					while	(temp.find(s1) != std::string::npos)
 					{
-						std::cout << "s1 : " << temp.find(s1) << std::endl;
-						std::cout << "THE STRING IS HEEEWEE!" << std::endl;
-						temp.clear();
+						pos = temp.find(s1);
+						start = 0;
+						newstr = newstr.append(temp.substr(start, pos));
+						newstr.append(s2);
+						temp = temp.substr((pos + size_s1), (temp.size()) - (pos + size_s1));
+						go = false;
 					}
+					newstr = newstr.append(temp);
+					if (go == false)
+						file2 << newstr;
 					else
-					{
 						file2 << temp;
-						file2 << std::endl;	
-					}
+					file2 << std::endl;
+					temp.clear();
+					newstr.clear();
 				}
 			}
 			else
