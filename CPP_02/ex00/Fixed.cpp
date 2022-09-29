@@ -30,7 +30,7 @@ Fixed&    Fixed::operator=( Fixed const & rhs) // returnType operator symbol (ar
 int Fixed::getRawBits( void ) const
 {
     std::cout << "getRawBits member function called" << std::endl;
-    return this->_bits_nb;
+    return this->_number;
 }
 
 void Fixed::setRawBits( int const raw )
@@ -38,10 +38,4 @@ void Fixed::setRawBits( int const raw )
     this->_number = raw;
 }
 
-int const    Fixed::_bits_nb = 0;
-
-std::ostream& operator<<(std::ostream& o, Fixed const & rhs)
-{
-    o << rhs.getRawBits();
-    return o;
-}
+int const    Fixed::_bits_nb = 8;

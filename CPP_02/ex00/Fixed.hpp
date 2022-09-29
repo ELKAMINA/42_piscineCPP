@@ -17,6 +17,4 @@ class Fixed
         static int const    _bits_nb; //stocker le nb de bits de la partie fractionnaire et dont la valeur sera toujours le littéral entier 8
 };
 
-std::ostream & operator<<( std::ostream & o, Fixed const& rhs);
-
 #endif
