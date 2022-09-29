@@ -1,4 +1,4 @@
-#include <string>
+#include <cstring>
 #include <iostream>
 #include <iomanip>
 #include "./Harl.hpp"
@@ -6,10 +6,13 @@
 
 int	main()
 {
-	Harl 		hey;
-	std::string	input;
+	Harl 		harl;
 
-	std::cin >> input;
-	hey.complain(input);
+	harl.complain("DEBUG");
+	harl.complain("WARNING");
+	harl.complain("INFO");
+	harl.complain("ERROR");
+	harl.complain("BLABLA");
+	harl.complain("4 ");
 	return 1;
 }
