@@ -7,8 +7,11 @@
 int	main()
 {
 	ClapTrap joueur_un("LILI");
-	ClapTrap joueur_deux("TOTO");
+	ClapTrap joueur_deux(joueur_un);
 	joueur_un.attack("lolilol");
+	joueur_deux.attack("Halima");
+	joueur_deux.takeDamage(2);
+	joueur_deux.beRepaired(5);
 	// joueur_un.takeDamage(1000);
 	// joueur_un.takeDamage(5);
 	// joueur_un.beRepaired(UINT32_MAX);

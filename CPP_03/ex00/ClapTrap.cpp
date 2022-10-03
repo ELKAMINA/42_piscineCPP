@@ -31,7 +31,11 @@ ClapTrap::ClapTrap( const ClapTrap& src)
 
 	this->_name = src._name;
 	*this = src;
+	std::cout << "Starting with : "<< src._Energypoints << " Energy points." << std::endl;
+	std::cout << "Starting with : "<< src._hitpoints << " Hit points." << std::endl;
+	std::cout << "Starting with : "<< src._AttackDamages << " Attack Damages." << std::endl;
 	std::cout << " ********************************************** " << std::endl;
+
 }
 
 ClapTrap::~ClapTrap( void )
@@ -41,8 +45,7 @@ ClapTrap::~ClapTrap( void )
 
 ClapTrap&    ClapTrap::operator=( ClapTrap const & rhs)
 {
-    std::cout << "Assignation operator.";
-
+    std::cout << "Assignation operator." << std::endl;
     this->_name = rhs._name;
 	this->_hitpoints = rhs._hitpoints;
 	this->_Energypoints = rhs._Energypoints;
@@ -75,8 +78,8 @@ void ClapTrap::beRepaired(unsigned int amount)
 		else		
 			this->_hitpoints += amount;
 		std::cout << "Let's get some reparation" << std::endl;
-		std::cout << "Now we have : " << this->_Energypoints << "Energy points. " << std::endl;
-		std::cout << "Now we have : " << this->_hitpoints << "Hit points. " << std::endl;
+		std::cout << "Now we have : " << this->_Energypoints << " Energy points. " << std::endl;
+		std::cout << "Now we have : " << this->_hitpoints << " Hit points. " << std::endl;
 	}
 	else
 		std::cout << "Maaan ! You can't breathe ... You Deaaad Bro'..." << std::endl;
