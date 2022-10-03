@@ -1,6 +1,7 @@
-NAME = cerveau
+NAME = ClapTrap
 
 SRC = main.cpp\
+	ClapTrap.cpp\
 
 OBJ = $(SRC:.cpp=.o)
 
