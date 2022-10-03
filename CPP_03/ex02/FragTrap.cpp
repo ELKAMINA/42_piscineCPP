@@ -43,7 +43,7 @@ FragTrap&    FragTrap::operator=( FragTrap const & rhs)
 
 void	FragTrap :: highFivesGuys()
 {
-	std::cout << "FragTrap :: High Fives Guuuyyys" << std::endl;
+	std::cout << "FragTrap :: High Fives Guuuyyys ???" << std::endl;
 }
 
 void FragTrap::attack(const std::string& target)
