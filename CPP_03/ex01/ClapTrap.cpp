@@ -7,6 +7,7 @@
 ClapTrap::ClapTrap( void ) : _name("Miskine"), _hitpoints(0), _Energypoints(0), _AttackDamages(0)
 {
 	std::cout << " ********** ClapTrap :: Constructeur par defaut ************* " << std::endl;
+	std::cout << "ClapTrap :: My name is : "<< this->_name << std::endl;
 	std::cout << "ClapTrap :: Starting with : "<< this->_Energypoints << " Energy points." << std::endl;
 	std::cout << "ClapTrap :: Starting with : "<< this->_hitpoints << " Hit points." << std::endl;
 	std::cout << "ClapTrap :: Starting with : "<< this->_AttackDamages << " Attack Damages." << std::endl;
@@ -17,7 +18,7 @@ ClapTrap::ClapTrap( void ) : _name("Miskine"), _hitpoints(0), _Energypoints(0), 
 ClapTrap::ClapTrap( std::string name ) : _name(name), _hitpoints(100), _Energypoints(50), _AttackDamages(20)
 {
 	std::cout << " ********** ClapTrap :: Constructeur par param ************* " << std::endl;
-
+	std::cout << "ClapTrap :: My name is : "<< this->_name << std::endl;
 	std::cout << "ClapTrap :: Starting with : "<< this->_Energypoints << " Energy points." << std::endl;
 	std::cout << "ClapTrap :: Starting with : "<< this->_hitpoints << " Hit points." << std::endl;
 	std::cout << "ClapTrap :: Starting with : "<< this->_AttackDamages << " Attack Damages." << std::endl;
@@ -32,10 +33,11 @@ ClapTrap::ClapTrap( const ClapTrap& src)
 
 	this->_name = src._name;
 	*this = src;
+	std::cout << "ClapTrap :: My name is : "<< this->_name << std::endl;
 	std::cout << "ClapTrap :: Starting with : "<< src._Energypoints << " Energy points." << std::endl;
 	std::cout << "ClapTrap :: Starting with : "<< src._hitpoints << " Hit points." << std::endl;
 	std::cout << "ClapTrap :: Starting with : "<< src._AttackDamages << " Attack Damages." << std::endl;
-	
+
 	std::cout << " ********************************************** " << std::endl;
 
 }

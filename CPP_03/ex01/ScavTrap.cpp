@@ -8,12 +8,8 @@ ScavTrap::ScavTrap( void ) : ClapTrap( )
 	std::cout << "ScavTrap ::Constructeur Scavtrap " << std::endl;
 }
 
-ScavTrap::ScavTrap( std::string name) : ClapTrap(name)// Quel constructeur appeler ?
+ScavTrap::ScavTrap( std::string name) : ClapTrap(name) // Quel constructeur appeler a l'appel du constructeur fils?
 {
-	this->_name = name;
-	this->_Energypoints = 100;
-	this->_hitpoints = 50;
-	this->_AttackDamages = 20;
 	std::cout << " ********** ScavTrap - Constructeur par param ************* " << std::endl;
 
 	std::cout << "ScavTrap ::  My name is : "<< this->_name << std::endl;
@@ -38,7 +34,6 @@ ScavTrap::~ScavTrap( void )
 ScavTrap&    ScavTrap::operator=( ScavTrap const & rhs)
 {
     std::cout << "ScavTrap :: Assignation operator called" << std::endl;
-
     return *this;
 }
 
@@ -56,7 +51,7 @@ void ScavTrap::attack(const std::string& target)
 		this->_Energypoints --;
 		std::cout << "ScavTrap :: Energy points : " << this->_Energypoints << std::endl;
 		std::cout << "ScavTrap :: Hit points : " << this->_hitpoints << std::endl;
-		std::cout << "ScavTrap :: Fin : Energy points" << this->_Energypoints << std::endl;
+		std::cout << "ScavTrap :: Fin : Energy points = " << this->_Energypoints << std::endl;
 	}
 	else
 		std::cout << "ScavTrap :: Youu deaaad man!" << std::endl;

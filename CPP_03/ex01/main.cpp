@@ -9,7 +9,7 @@ int	main()
 {
 	ClapTrap joueur_un;
 	ScavTrap Kikou("HEY");
-	// Kikou.attack("MOK");
+	Kikou.attack("MOK");
 	// // ClapTrap joueur_deux(joueur_un);
 	// Kikou.guardGate();
 	// // joueur_un.attack("lolilol");
