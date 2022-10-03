@@ -15,7 +15,7 @@ ClapTrap::ClapTrap( void ) : _name("Miskine"), _hitpoints(0), _Energypoints(0), 
 	std::cout << " ********************************************** " << std::endl;
 }
 
-ClapTrap::ClapTrap( std::string name ) : _name(name), _hitpoints(100), _Energypoints(50), _AttackDamages(20)
+ClapTrap::ClapTrap( std::string name ) : _name(name), _hitpoints(10), _Energypoints(10), _AttackDamages(0)
 {
 	std::cout << " ********** ClapTrap :: Constructeur par param ************* " << std::endl;
 	std::cout << "ClapTrap :: My name is : "<< this->_name << std::endl;

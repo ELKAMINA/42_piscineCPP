@@ -10,6 +10,10 @@ ScavTrap::ScavTrap( void ) : ClapTrap( )
 
 ScavTrap::ScavTrap( std::string name) : ClapTrap(name) // Quel constructeur appeler a l'appel du constructeur fils?
 {
+	this->_name = name;
+	this->_Energypoints = 100;
+	this->_hitpoints = 50;
+	this->_AttackDamages = 20;
 	std::cout << " ********** ScavTrap - Constructeur par param ************* " << std::endl;
 
 	std::cout << "ScavTrap ::  My name is : "<< this->_name << std::endl;
