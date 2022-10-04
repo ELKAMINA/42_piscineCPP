@@ -41,7 +41,12 @@ Animal&    Animal::operator=( Animal const & rhs)
     return *this;
 }
 
-std::string	Animal::get_type()
+std::string	Animal::getType() const
 {
 	return (this->_type);
+}
+
+void	Animal::makeSound() const
+{
+	std::cout << "Aaaaaaanimal" << std::endl;
 }

@@ -41,3 +41,13 @@ Cat&    Cat::operator=( Cat const & rhs)
     this->_type = rhs._type;
     return *this;
 }
+
+void	Cat::makeSound() const
+{
+	std::cout << "Miaaaouuuuuuuuuuu" << std::endl;
+}
+
+std::string	Cat::getType() const
+{
+	return (this->_type);
+}

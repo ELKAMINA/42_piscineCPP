@@ -1,6 +1,9 @@
-NAME = 
+NAME = Polymorphism
 
 SRC = main.cpp\
+	Dog.cpp\
+	Cat.cpp\
+	animal.cpp\
 
 
 OBJ = $(SRC:.cpp=.o)
