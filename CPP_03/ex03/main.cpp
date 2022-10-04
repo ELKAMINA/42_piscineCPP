@@ -1,6 +1,7 @@
 #include "./ClapTrap.hpp"
 #include "./ScavTrap.hpp"
 #include "./FragTrap.hpp"
+#include "./DiamondTrap.hpp"
 #include <string>
 #include <iostream>
 #include <iomanip>
@@ -8,16 +9,9 @@
 
 int	main()
 {
-	ClapTrap joueur_un;
-	ScavTrap Kikou("HEY");
-	FragTrap wesh;
-	Kikou.attack("Tito");
-	// // ClapTrap joueur_deux(joueur_un);
-	Kikou.guardGate();
-	// // joueur_un.attack("lolilol");
-	Kikou.attack("Garbage");
-	Kikou.takeDamage(2);
-	Kikou.beRepaired(5);
+	DiamondTrap diamond;
+
+	diamond.attack("her");
 	// // joueur_un.takeDamage(1000);
 	// // joueur_un.takeDamage(5);
 	// // joueur_un.beRepaired(UINT32_MAX);

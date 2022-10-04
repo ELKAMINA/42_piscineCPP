@@ -7,38 +7,43 @@
 ClapTrap::ClapTrap( void ) : _name("Miskine"), _hitpoints(0), _Energypoints(0), _AttackDamages(0)
 {
 	std::cout << " ********** ClapTrap :: Constructeur par defaut ************* " << std::endl;
+	std::cout << std::endl;
 	std::cout << "ClapTrap :: My name is : "<< this->_name << std::endl;
 	std::cout << "ClapTrap :: Starting with : "<< this->_Energypoints << " Energy points." << std::endl;
 	std::cout << "ClapTrap :: Starting with : "<< this->_hitpoints << " Hit points." << std::endl;
 	std::cout << "ClapTrap :: Starting with : "<< this->_AttackDamages << " Attack Damages." << std::endl;
-
+	std::cout << std::endl;
 	std::cout << " ********************************************** " << std::endl;
+	std::cout << std::endl;
 }
 
 ClapTrap::ClapTrap( std::string name ) : _name(name), _hitpoints(10), _Energypoints(10), _AttackDamages(0)
 {
 	std::cout << " ********** ClapTrap :: Constructeur par param ************* " << std::endl;
+	std::cout << std::endl;
 	std::cout << "ClapTrap :: My name is : "<< this->_name << std::endl;
 	std::cout << "ClapTrap :: Starting with : "<< this->_Energypoints << " Energy points." << std::endl;
 	std::cout << "ClapTrap :: Starting with : "<< this->_hitpoints << " Hit points." << std::endl;
 	std::cout << "ClapTrap :: Starting with : "<< this->_AttackDamages << " Attack Damages." << std::endl;
-	
+	std::cout << std::endl;
 	std::cout << " ********************************************** " << std::endl;
+	std::cout << std::endl;
 }
 /* Diff entre operateur d'assignation et constructeur de copie : https://fr.gadget-info.com/difference-between-copy-constructor#:~:text=Le%20constructeur%20de%20copie%20initialise,autre%20objet%20qui%20existe%20d%C3%A9j%C3%A0.&text=(1)%20Le%20constructeur%20de%20copie,initialis%C3%A9%20avec%20un%20objet%20existant. */
 
 ClapTrap::ClapTrap( const ClapTrap& src)
 {
 	std::cout << " ********** ClapTrap :: Constructeur par recopie ************* " << std::endl;
-
+	std::cout << std::endl;
 	this->_name = src._name;
 	*this = src;
 	std::cout << "ClapTrap :: My name is : "<< this->_name << std::endl;
 	std::cout << "ClapTrap :: Starting with : "<< src._Energypoints << " Energy points." << std::endl;
 	std::cout << "ClapTrap :: Starting with : "<< src._hitpoints << " Hit points." << std::endl;
 	std::cout << "ClapTrap :: Starting with : "<< src._AttackDamages << " Attack Damages." << std::endl;
-
+	std::cout << std::endl;
 	std::cout << " ********************************************** " << std::endl;
+	std::cout << std::endl;
 
 }
 

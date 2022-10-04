@@ -6,41 +6,46 @@
 #include <iostream>
 #include <iomanip>
 
-DiamondTrap::DiamondTrap( void ) : 
+DiamondTrap::DiamondTrap( void ) : ClapTrap(), FragTrap(), ScavTrap()
 {
 	std::cout << " ********** DiamondTrap :: Constructeur par defaut ************* " << std::endl;
+	std::cout << std::endl;
 	std::cout << "DiamondTrap :: My name is : "<< this->_name << std::endl;
 	std::cout << "DiamondTrap :: Starting with : "<< this->_Energypoints << " Energy points." << std::endl;
 	std::cout << "DiamondTrap :: Starting with : "<< this->_hitpoints << " Hit points." << std::endl;
 	std::cout << "DiamondTrap :: Starting with : "<< this->_AttackDamages << " Attack Damages." << std::endl;
-
+	std::cout << std::endl;
 	std::cout << " ********************************************** " << std::endl;
+	std::cout << std::endl;
 }
 
-DiamondTrap::DiamondTrap( std::string name ) : _name(name), _hitpoints(10), _Energypoints(10), _AttackDamages(0)
+DiamondTrap::DiamondTrap( std::string name ) : ClapTrap(name), FragTrap(name), ScavTrap(name)
 {
 	std::cout << " ********** DiamondTrap :: Constructeur par param ************* " << std::endl;
+	std::cout << std::endl;
 	std::cout << "DiamondTrap :: My name is : "<< this->_name << std::endl;
 	std::cout << "DiamondTrap :: Starting with : "<< this->_Energypoints << " Energy points." << std::endl;
 	std::cout << "DiamondTrap :: Starting with : "<< this->_hitpoints << " Hit points." << std::endl;
 	std::cout << "DiamondTrap :: Starting with : "<< this->_AttackDamages << " Attack Damages." << std::endl;
-	
+	std::cout << std::endl;
 	std::cout << " ********************************************** " << std::endl;
+	std::cout << std::endl;
 }
 /* Diff entre operateur d'assignation et constructeur de copie : https://fr.gadget-info.com/difference-between-copy-constructor#:~:text=Le%20constructeur%20de%20copie%20initialise,autre%20objet%20qui%20existe%20d%C3%A9j%C3%A0.&text=(1)%20Le%20constructeur%20de%20copie,initialis%C3%A9%20avec%20un%20objet%20existant. */
 
 DiamondTrap::DiamondTrap( const DiamondTrap& src) : ClapTrap()
 {
 	std::cout << " ********** DiamondTrap :: Constructeur par recopie ************* " << std::endl;
-
+	std::cout << std::endl;
 	this->_name = src._name;
 	*this = src;
 	std::cout << "DiamondTrap :: My name is : "<< this->_name << std::endl;
 	std::cout << "DiamondTrap :: Starting with : "<< src._Energypoints << " Energy points." << std::endl;
 	std::cout << "DiamondTrap :: Starting with : "<< src._hitpoints << " Hit points." << std::endl;
 	std::cout << "DiamondTrap :: Starting with : "<< src._AttackDamages << " Attack Damages." << std::endl;
-
+	std::cout << std::endl;
 	std::cout << " ********************************************** " << std::endl;
+	std::cout << std::endl;
 
 }
 
@@ -51,7 +56,7 @@ DiamondTrap::~DiamondTrap( void )
 
 DiamondTrap&    DiamondTrap::operator=( DiamondTrap const & rhs)
 {
-    std::cout << "DiamondTrap :: Assignation operator." << std::endl;
+    std::cout << "DiamondTrap :: Assignation operator " << std::endl;
     this->_name = rhs._name;
 	this->_hitpoints = rhs._hitpoints;
 	this->_Energypoints = rhs._Energypoints;

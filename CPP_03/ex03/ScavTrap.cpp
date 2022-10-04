@@ -5,7 +5,19 @@
 
 ScavTrap::ScavTrap( void ) : ClapTrap( ) 
 {
-	std::cout << "ScavTrap ::Constructeur Scavtrap " << std::endl;
+	this->_name = "ScavTrap but Nobodyyy";
+	this->_Energypoints = 10;
+	this->_hitpoints = 10;
+	this->_AttackDamages = 0;
+	std::cout << " ********** ScavTrap - Constructeur par défaut ************* " << std::endl;
+	std::cout << std::endl;
+	std::cout << "ScavTrap ::  My name is : "<< this->_name << std::endl;
+	std::cout << "ScavTrap :: Starting with : "<< this->_Energypoints << " Energy points." << std::endl;
+	std::cout << "ScavTrap :: Starting with : "<< this->_hitpoints << " Hit points." << std::endl;
+	std::cout << "ScavTrap :: Starting with : "<< this->_AttackDamages << " Attack Damages." << std::endl;
+	std::cout << std::endl;
+	std::cout << " ********************************************** " << std::endl;
+	std::cout << std::endl;
 }
 
 ScavTrap::ScavTrap( std::string name) : ClapTrap(name) // Quel constructeur appeler a l'appel du constructeur fils?
@@ -15,13 +27,14 @@ ScavTrap::ScavTrap( std::string name) : ClapTrap(name) // Quel constructeur appe
 	this->_hitpoints = 100;
 	this->_AttackDamages = 20;
 	std::cout << " ********** ScavTrap - Constructeur par param ************* " << std::endl;
-
+	std::cout << std::endl;
 	std::cout << "ScavTrap ::  My name is : "<< this->_name << std::endl;
 	std::cout << "ScavTrap :: Starting with : "<< this->_Energypoints << " Energy points." << std::endl;
 	std::cout << "ScavTrap :: Starting with : "<< this->_hitpoints << " Hit points." << std::endl;
 	std::cout << "ScavTrap :: Starting with : "<< this->_AttackDamages << " Attack Damages." << std::endl;
-
+	std::cout << std::endl;
 	std::cout << " ********************************************** " << std::endl;
+	std::cout << std::endl;
 }
 
 ScavTrap::ScavTrap( const ScavTrap& src) : ClapTrap(*this)

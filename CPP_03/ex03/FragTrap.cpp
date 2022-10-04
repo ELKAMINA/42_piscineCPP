@@ -5,7 +5,19 @@
 
 FragTrap::FragTrap( void ) : ClapTrap( ) 
 {
-	std::cout << "FragTrap ::Constructeur par defaut FragTrap " << std::endl;
+	this->_name = "FragTrap but Nobodyyy";
+	this->_Energypoints = 10;
+	this->_hitpoints = 10;
+	this->_AttackDamages = 0;
+	std::cout << " ********** FragTrap - Constructeur par défaut ************* " << std::endl;
+	std::cout << std::endl;
+	std::cout << "ScavTrap ::  My name is : "<< this->_name << std::endl;
+	std::cout << "ScavTrap :: Starting with : "<< this->_Energypoints << " Energy points." << std::endl;
+	std::cout << "ScavTrap :: Starting with : "<< this->_hitpoints << " Hit points." << std::endl;
+	std::cout << "ScavTrap :: Starting with : "<< this->_AttackDamages << " Attack Damages." << std::endl;
+	std::cout << std::endl;
+	std::cout << " ********************************************** " << std::endl;
+	std::cout << std::endl;
 }
 
 FragTrap::FragTrap( std::string name) : ClapTrap(name) // Quel constructeur appeler a l'appel du constructeur fils?
@@ -15,13 +27,14 @@ FragTrap::FragTrap( std::string name) : ClapTrap(name) // Quel constructeur appe
 	this->_hitpoints = 100;
 	this->_AttackDamages = 30;
 	std::cout << " ********** FragTrap - Constructeur par param ************* " << std::endl;
-
+	std::cout << std::endl;
 	std::cout << "FragTrap ::  My name is : "<< this->_name << std::endl;
 	std::cout << "FragTrap :: Starting with : "<< this->_Energypoints << " Energy points." << std::endl;
 	std::cout << "FragTrap :: Starting with : "<< this->_hitpoints << " Hit points." << std::endl;
 	std::cout << "FragTrap :: Starting with : "<< this->_AttackDamages << " Attack Damages." << std::endl;
-
+	std::cout << std::endl;
 	std::cout << " ********************************************** " << std::endl;
+	std::cout << std::endl;
 }
 
 FragTrap::FragTrap( const FragTrap& src) : ClapTrap(*this)
