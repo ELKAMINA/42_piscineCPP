@@ -5,7 +5,7 @@
 
 /* Heritage et acces aux donnees */
 
-class ScavTrap : public virtual ClapTrap
+class ScavTrap :virtual public ClapTrap
 {
 	public :
 		ScavTrap( void );
@@ -14,7 +14,10 @@ class ScavTrap : public virtual ClapTrap
 		~ScavTrap( void );
 		ScavTrap& operator =(ScavTrap const &);
 		void	guardGate();
-		void	attack(const std::string& target);
+		virtual void	attack(const std::string& target);
+		static const int	st_hitpoints = 100;
+		static const int	st_enpoints = 50;
+		static const int	st_damages = 20;
 
 	private :
 	// std::string		_name;

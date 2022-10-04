@@ -9,7 +9,7 @@
 
 /* Diamond Problem Inheritance : https://www.cprogramming.com/tutorial/virtual_inheritance.html */
 
-class DiamondTrap : public virtual ClapTrap, public ScavTrap, public FragTrap
+class DiamondTrap : public FragTrap, public ScavTrap
 {
 	public :
 		DiamondTrap( void ); // Constructeur par defaut
@@ -17,10 +17,8 @@ class DiamondTrap : public virtual ClapTrap, public ScavTrap, public FragTrap
 		DiamondTrap( DiamondTrap const& ); // Constructeur par recopie
 		~DiamondTrap( void ); // Destructeur
 		DiamondTrap& operator=(DiamondTrap const &); // operateur d'assignation = binaire
-		// void attack(const std::string& target);
-		// void takeDamage(unsigned int amount);
-		// void beRepaired(unsigned int amount);
-
+		void	attack(const std::string& target);
+		void	whoAmI();
 
 	private :
 		std::string				_name;

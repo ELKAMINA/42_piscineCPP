@@ -8,12 +8,11 @@ class ClapTrap
 		ClapTrap( void ); // Constructeur par defaut
 		ClapTrap( std::string name); // Constructeur ac param
 		ClapTrap( ClapTrap const& ); // Constructeur par recopie
-		virtual ~ClapTrap( void ); // Destructeur
+		~ClapTrap( void ); // Destructeur
 		ClapTrap& operator=(ClapTrap const &); // operateur d'assignation = binaire
-		virtual	void attack(const std::string& target);
-		virtual void takeDamage(unsigned int amount);
-		virtual void beRepaired(unsigned int amount);
-
+		void attack(const std::string& target);
+		void takeDamage(unsigned int amount);
+		void beRepaired(unsigned int amount);
 
 	protected :
 		std::string				_name;

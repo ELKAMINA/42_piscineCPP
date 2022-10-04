@@ -7,21 +7,19 @@
 #include <iomanip>
 #include <climits>
 
+
 int	main()
 {
-	DiamondTrap diamond;
-
-	diamond.attack("her");
-	// // joueur_un.takeDamage(1000);
-	// // joueur_un.takeDamage(5);
-	// // joueur_un.beRepaired(UINT32_MAX);
-	// joueur_un.beRepaired(10);
-	
-	// for (size_t i = 0; i < 11; i++)
-	// {
-	// 	joueur_un.attack("Mok");
-	// 	joueur_un.takeDamage(3);
-	// }
-
-
+	{
+		std::cout << "===== DIAMOND TRAP TEST =====" << std::endl;
+		DiamondTrap child1 = DiamondTrap("Fiston_1");
+		child1.attack("Test");
+		child1.takeDamage(5);
+		child1.beRepaired(5);
+	}
+	{
+		std::cout << "===== Who am I test =====" << std::endl;
+		DiamondTrap child1 = DiamondTrap("Fiston_1");
+		child1.whoAmI();
+	}
 }
