@@ -44,10 +44,5 @@ Dog&    Dog::operator=( Dog const & rhs)
 
 void	Dog::makeSound() const
 {
-	std::cout << "Haaaouuuuuuuuuuu" << std::endl;
-}
-
-std::string	Dog::getType() const
-{
-	return (this->_type);
+	std::cout << "\e[0;31mHaaaouuuuuuuuuuu\e[0m" << std::endl;
 }

@@ -1,4 +1,4 @@
-#include "./animal.hpp"
+#include "./Animal.hpp"
 
 Animal::Animal() : _type("Hayawane")
 {
@@ -48,5 +48,5 @@ std::string	Animal::getType() const
 
 void	Animal::makeSound() const
 {
-	std::cout << "Aaaaaaanimal" << std::endl;
+	std::cout << "\e[0;32mI'm your Father\e[0m" << std::endl;
 }

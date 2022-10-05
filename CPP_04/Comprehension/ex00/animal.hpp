@@ -8,12 +8,12 @@ class Animal
 {
     public :
 		Animal();
-		Animal(const Animal&);
+		Animal(const Animal& twins);
 		Animal(std::string type);
-		Animal& operator=(Animal const &);
-		virtual std::string	getType() const;
-		virtual void makeSound() const;
 		~Animal();
+		Animal& operator=(Animal const &);
+		std::string	getType() const;
+		virtual void makeSound() const;
 	
 	protected :
 		std::string	_type;

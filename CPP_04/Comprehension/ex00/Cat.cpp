@@ -44,10 +44,5 @@ Cat&    Cat::operator=( Cat const & rhs)
 
 void	Cat::makeSound() const
 {
-	std::cout << "Miaaaouuuuuuuuuuu" << std::endl;
-}
-
-std::string	Cat::getType() const
-{
-	return (this->_type);
+	std::cout << "\e[0;31Miaaaouuuuuuuuuuu\e[0m" << std::endl;
 }

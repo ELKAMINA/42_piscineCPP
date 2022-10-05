@@ -3,7 +3,9 @@ NAME = Polymorphism
 SRC = main.cpp\
 	Dog.cpp\
 	Cat.cpp\
-	animal.cpp\
+	Animal.cpp\
+	WrongCat.cpp\
+	WrongAnimal.cpp\
 
 
 OBJ = $(SRC:.cpp=.o)
