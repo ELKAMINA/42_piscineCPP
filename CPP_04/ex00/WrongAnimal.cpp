@@ -45,3 +45,8 @@ void	WrongAnimal::makeSound() const
 {
 	std::cout << "AaaaaaWronganimal" << std::endl;
 }
+
+std::string	WrongAnimal::getType() const
+{
+	return (this->_type);
+}
