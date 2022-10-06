@@ -2,8 +2,8 @@
 
 Dog::Dog()
 {
-	this->_type = "Dog";
-	this->_cerveau = new Brain;
+	this->setType("Doggy");
+	this->_cerveau = new Brain();
 	std::cout << " ********** Dog :: Constructeur par defaut ************* " << std::endl;
 	std::cout << std::endl;
 	std::cout << " **********        ************* " << std::endl;
@@ -12,7 +12,9 @@ Dog::Dog()
 
 Dog::Dog(Dog const & src) 
 {
+	this->_type = src.getType();
 	this->_cerveau = new Brain(*(src.getBrain()));
+	*this = src;
 	std::cout << " ********** Dog :: Constructeur par recopie ************* " << std::endl;
 	std::cout << std::endl;
 	std::cout << " **********        ************* " << std::endl;
@@ -21,11 +23,11 @@ Dog::Dog(Dog const & src)
 
 Dog::~Dog() 
 {
+	delete this->_cerveau;
 	std::cout << " ********** Dog :: Destructeur ************* " << std::endl;
 	std::cout << std::endl;
 	std::cout << " **********        ************* " << std::endl;
 	std::cout << std::endl;
-	delete this->_cerveau;
 }
 
 Dog&    Dog::operator=( Dog const & rhs)

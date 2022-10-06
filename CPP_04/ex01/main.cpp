@@ -18,11 +18,15 @@ int main()
     delete i;
     // std::cout << "\e[0;32mI***** Verif copies d'objets*****\e[0m" << std::endl;
     // Cat* Kitty = new Cat("Kityy kitou");
-    // Cat* siblings = Kitty;
+	// Cat* siblings = new Cat("hey");
+	// // *siblings = *Kitty;
     // siblings->setType("LOOOOOOL");
     // std::cout << "Sibling :  " << siblings->getType() << std::endl;
     // std::cout << "Kitty : " << Kitty->getType() << std::endl;
-    // // Animal*  tab_an[10];
+	// delete (Kitty);
+	// delete (siblings);
+	// std::cout << "\e[0;32mI***** Verif Deep copy*****\e[0m" << std::endl;
+    // Animal*  tab_an[10];
     // for (size_t i = 0; i < 10; i++)
     // {
     //     if (i < 5)
@@ -34,14 +38,16 @@ int main()
     // {
     //     delete tab_an[i];
     // }
-    // std::cout << "\e[0;32mI***** Test avec WrongCat*****\e[0m" << std::endl;
-    // const WrongAnimal* meta = new WrongAnimal();
-    // // const WrongAnimal* j = new Dog();
-    // const WrongAnimal* i = new WrongCat();
-    // // std::cout << j->getType() << " " << std::endl;
-    // std::cout << i->getType() << " " << std::endl;
-    // i->makeSound(); //will output the WrongCat sound!
-    // // j->makeSound();
-    // // meta->makeSound();
+	std::cout << "===== Deep Copy test =====" << std::endl;
+	Dog Snoopy;
+	std::cout << "Adresse de Snoopy : " << &Snoopy << std::endl;
+	Snoopy.getBrain()->setIdea(0, "J'ai faim");
+	Snoopy.getBrain()->setIdea(1, "J'ai la dalle");
+	Snoopy.getBrain()->setIdea(2, "Je veux mannnger");
+	Dog Rex(Snoopy);
+	std::cout << "Adresse de Rex : " <<& Rex << std::endl;
+	Rex.getBrain()->setIdea(0, "J'en peux plus de manger");
+	std::cout << "REEEEEX : " << Rex.getBrain()->getIdea(0) << std::endl;
+	std::cout << "Snoopy : " << Snoopy.getBrain()->getIdea(0) << std::endl;
     return 0;
 }

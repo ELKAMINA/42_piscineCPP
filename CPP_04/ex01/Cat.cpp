@@ -2,19 +2,19 @@
 
 Cat::Cat()
 {
-	this->_type = "Cat";
-	this->_cerveau = new Brain;
+	this->setType("Catty");
+	this->_cerveau = new Brain();
 	std::cout << " ********** Cat :: Constructeur par defaut ************* " << std::endl;
 	std::cout << std::endl;
 	std::cout << " **********        ************* " << std::endl;
 	std::cout << std::endl;
 }
 
-Cat::Cat(Cat const & src) 
+Cat::Cat(Cat const& src) 
 {
 	this->_type = src.getType();
 	this->_cerveau = new Brain(*(src.getBrain()));
-	*this = src;
+	// *this = src;
 	std::cout << " ********** Cat :: Constructeur par recopie ************* " << std::endl;
 	std::cout << std::endl;
 	std::cout << " **********        ************* " << std::endl;
@@ -24,6 +24,7 @@ Cat::Cat(Cat const & src)
 Cat::Cat(std::string type)
 {
 	this->setType(type);
+	this->_cerveau = new Brain();
 	std::cout << " ********** Cat :: Constructeur par param ************* " << std::endl;
 	std::cout << std::endl;
 	std::cout << " **********        ************* " << std::endl;
@@ -32,17 +33,17 @@ Cat::Cat(std::string type)
 
 Cat::~Cat() 
 {
+	delete _cerveau;
 	std::cout << " ********** Cat :: Destructeur ************* " << std::endl;
 	std::cout << std::endl;
 	std::cout << " **********        ************* " << std::endl;
 	std::cout << std::endl;
-	delete this->_cerveau;
 }
 
 Cat&    Cat::operator=( Cat const & rhs)
 {
     std::cout << "Cat :: Assignation operator " << std::endl;
-    this->_type = rhs._type;
+    this->_type = rhs.getType();
     return *this;
 }
 

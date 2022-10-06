@@ -13,7 +13,7 @@ OBJ = $(SRC:.cpp=.o)
 
 CC = c++
 
-FLAG =  -Wall -Werror -Wextra -fsanitize=address -std=c++98 
+FLAG = -g3 -Wall -Werror -Wextra -std=c++98 #-fsanitize=address
 
 all : $(NAME)
 

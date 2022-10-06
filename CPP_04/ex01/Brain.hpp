@@ -9,8 +9,8 @@ class Brain
     public :
         Brain();
         Brain(const Brain& twins);
-        ~Brain();
-        Brain& operator=(Brain const &);
+        Brain& operator=(Brain const& rhs);
+        virtual ~Brain();
         std::string getIdea(int index) const;
         void    setIdea(int index, std::string idea);
 

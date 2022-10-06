@@ -25,10 +25,13 @@ Brain::~Brain()
 	std::cout << std::endl;
 }
 
-Brain&    Brain::operator=( Brain const & rhs)
+Brain&    Brain::operator=( Brain const& rhs)
 {
     std::cout << "Brain :: Assignation operator " << std::endl;
-    *this = rhs;
+	for (size_t i = 0; i < 100; i++)
+	{
+		this->_ideas[i] = rhs.getIdea(i);
+	}
     return *this;
 }
 
