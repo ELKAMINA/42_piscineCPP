@@ -16,10 +16,10 @@ class MateriaSource : public IMateriaSource
 		virtual ~MateriaSource();
 		virtual void learnMateria(AMateria*);
 		virtual AMateria* createMateria(std::string const & type);
-		static int	learnt_Materia;
 
 	private :
 		AMateria* _MS_items[4];
+		int		  _MS_Nb_total_item;
 };
 
 #endif

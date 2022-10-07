@@ -12,6 +12,7 @@ class Ice : public AMateria
 		Ice& operator=(Ice const & rhs);
 		virtual ~Ice();
 		virtual Ice* clone() const;
+		virtual std::string const & getType() const;
 		virtual void use(ICharacter& target);
 
 	protected:

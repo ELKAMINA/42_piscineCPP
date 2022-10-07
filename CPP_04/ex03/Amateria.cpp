@@ -6,35 +6,35 @@
 
 AMateria::AMateria() : _type("unknown")
 {
-	std::cout << " ********** AMateria :: Constructeur par defaut ************* " << std::endl;
-	std::cout << std::endl;
-	std::cout << " **********        ************* " << std::endl;
-	std::cout << std::endl;
+	// std::cout << " ********** AMateria :: Constructeur par defaut ************* " << std::endl;
+	// std::cout << std::endl;
+	// std::cout << " **********        ************* " << std::endl;
+	// std::cout << std::endl;
 }
 
 AMateria::AMateria(AMateria const& src) 
 {
 	*this = src;
-	std::cout << " ********** AMateria :: Constructeur par recopie ************* " << std::endl;
-	std::cout << std::endl;
-	std::cout << " **********        ************* " << std::endl;
-	std::cout << std::endl;
+	// std::cout << " ********** AMateria :: Constructeur par recopie ************* " << std::endl;
+	// std::cout << std::endl;
+	// std::cout << " **********        ************* " << std::endl;
+	// std::cout << std::endl;
 }
 
 AMateria::AMateria(std::string const& type)
 {
-	std::cout << " ********** AMateria :: Constructeur par param ************* " << std::endl;
-	std::cout << std::endl;
-	std::cout << " **********        ************* " << std::endl;
-	std::cout << std::endl;
+	// std::cout << " ********** AMateria :: Constructeur par param ************* " << std::endl;
+	// std::cout << std::endl;
+	// std::cout << " **********        ************* " << std::endl;
+	// std::cout << std::endl;
 }
 
 AMateria::~AMateria() 
 {
-	std::cout << " ********** AMateria :: Destructeur ************* " << std::endl;
-	std::cout << std::endl;
-	std::cout << " **********        ************* " << std::endl;
-	std::cout << std::endl;
+	// std::cout << " ********** AMateria :: Destructeur ************* " << std::endl;
+	// std::cout << std::endl;
+	// std::cout << " **********        ************* " << std::endl;
+	// std::cout << std::endl;
 }
 
 AMateria&    AMateria::operator=( AMateria const & rhs)

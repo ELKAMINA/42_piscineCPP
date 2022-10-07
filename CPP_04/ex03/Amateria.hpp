@@ -12,7 +12,7 @@ class AMateria
 		AMateria(AMateria const& twin);
 		AMateria& operator=(AMateria const& rhs);
 		virtual ~AMateria();
-		std::string const & getType() const;
+		virtual std::string const & getType() const;
 		void setType(std::string type); //Returns the materia type
 		virtual AMateria* clone() const = 0;
 		virtual void use(ICharacter& target);

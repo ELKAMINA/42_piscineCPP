@@ -12,6 +12,7 @@ class Cure : public AMateria
 		Cure& operator=(Cure const & rhs);
 		virtual ~Cure();
 		virtual Cure* clone() const;
+		virtual std::string const & getType() const;
 		virtual void use(ICharacter& target);
 
 	protected:
