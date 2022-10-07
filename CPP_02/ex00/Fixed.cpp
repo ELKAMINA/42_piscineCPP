@@ -15,17 +15,18 @@ Fixed::Fixed( Fixed const& src )
     return ;
 }
 
-Fixed::~Fixed( void )
-{
-    std::cout << "Destructor called" << std::endl;
-}
-
 Fixed&    Fixed::operator=( Fixed const & rhs) // returnType operator symbol (arguments)
 {
     std::cout << "Copy assignment operator called" << std::endl;
     this->_number = rhs.getRawBits();
     return *this;
 }
+
+Fixed::~Fixed( void )
+{
+    std::cout << "Destructor called" << std::endl;
+}
+
 
 int Fixed::getRawBits( void ) const
 {
