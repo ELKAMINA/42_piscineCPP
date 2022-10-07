@@ -1,12 +1,7 @@
-NAME = Abstract
+NAME = Bureaucrat_00
 
 SRC = main.cpp\
-	Amateria.cpp \
-	Character.cpp \
-	Cure.cpp \
-	Ice.cpp \
-	MateriaSource.cpp \
-
+	src/Bureaucrat.cpp \
 
 OBJ = $(SRC:.cpp=.o)
 
