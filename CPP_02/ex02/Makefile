@@ -1,6 +1,7 @@
-NAME = cerveau
+NAME = Fixed
 
 SRC = main.cpp\
+	Fixed.cpp\
 
 OBJ = $(SRC:.cpp=.o)
 

@@ -1,27 +1,22 @@
 #include <iostream>
 #include <cstring>
+#include "./Fixed.hpp"
 
-int	main()
+int main( void ) 
 {
-	std::string		str = "HI THIS IS BRAIN";
-	std::string* 	stringPTR = &str; // Pointeur sur la variable str
-	std::string&	stringREF = str; // Reference sur la variable str
-
-	/* Afficher l'adresse de la string */
-	std::cout << "Adresse de la string ===> " << &str << std::endl;
-
-	/* Afficher l'adresse stockee dans stringPTR */
-	std::cout << "Adresse stockee dans stringPTR ===> " << stringPTR << std::endl;
-	
-	/* Afficher l'adresse stockee dans stringREF */
-	std::cout << "Adresse stockee dans stringREF ===> " << &stringREF << std::endl;
-
-	/* Afficher la valeur de la string  */
-	std::cout << "Valeur de la string : " << str << std::endl;
-
-	/* Afficher la valeur pointee par stringPTR */
-	std::cout << "valeur  pointee par stringPTR ===> " << *stringPTR << std::endl;
-	
-	/* Afficher la valeur pointee par stringREF */
-	std::cout << "Adresse  pointee par stringREF ===> " << stringREF << std::endl;
+	Fixed a;
+	// Fixed c;
+	// Fixed r;
+	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
+	std::cout << "a is : " << a << std::endl;
+	std::cout << "++a is : "<< ++a << std::endl;
+	// std::cout << "c++ is : "<< c++ << std::endl;
+	// std::cout << "r++ is : "<< r++ << std::endl;
+	// std::cout << "r + c is : "<< c / r << std::endl;
+	std::cout << a << std::endl;
+	std::cout << a++ << std::endl;
+	std::cout << a << std::endl;
+	std::cout << b << std::endl;
+	std::cout << Fixed::max( a, b ) << std::endl;
+	return 0;
 }
