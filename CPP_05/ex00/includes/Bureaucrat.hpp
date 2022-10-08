@@ -7,12 +7,14 @@ class Bureaucrat
 	public:
 		Bureaucrat();
 		Bureaucrat(Bureaucrat const& twin);
+        Bureaucrat(std::string const name);
+        Bureaucrat(std::string const name, int grade);
+        Bureaucrat(int grade);
 		Bureaucrat& operator=(Bureaucrat const & rhs);
 		~Bureaucrat();
 		std::string const getName() const;
         int const getGrade() const;
         void setGrade(int itg);
-        void setName(std::string name);
         void setHigherGrade();
         void setLowerGrade();
         class GradeTooHighException : public std::exception
@@ -33,7 +35,7 @@ class Bureaucrat
         };
 
 	private:
-		std::string const _name = "Bureaucrat";
+		std::string const _name;
         int               _grade;
 };
 
