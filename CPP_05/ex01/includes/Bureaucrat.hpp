@@ -2,6 +2,8 @@
 # define BUREAUCRAT_CLASS_HPP
 #include <string>
 
+class Form;
+
 class Bureaucrat
 {
 	public:
@@ -17,7 +19,7 @@ class Bureaucrat
         void                setGrade(int itg);
         void                setHigherGrade();
         void                setLowerGrade();
-        void                signForm();
+        void                signForm(Form &formulaire);
         class GradeTooHighException : public std::exception
         {
             public: 

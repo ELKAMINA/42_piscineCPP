@@ -1,4 +1,5 @@
 #include "../includes/Bureaucrat.hpp"
+#include "../includes/Form.hpp"
 #include <iostream>
 #include <string>
 #include <stdexcept>
@@ -117,7 +118,7 @@ Bureaucrat::~Bureaucrat()
 Bureaucrat&    Bureaucrat::operator=( Bureaucrat const & rhs)
 {
     // std::cout << "Bureaucrat :: Assignation operator " << std::endl;
-    std::cout << "RHS GRADE" << rhs._grade << std::endl;
+    // std::cout << "RHS GRADE" << rhs._grade << std::endl;
     try
     {
         if (rhs._grade > 150)
@@ -200,9 +201,24 @@ void    Bureaucrat::setLowerGrade()
     }
 }
 
-void    Bureaucrat::signForm()
+void    Bureaucrat::signForm(Form &formulaire)
 {
     
+    try
+    {
+        if (formulaire.isSigned() == true)
+        {
+            Form::FormAlreadySigned exc; 
+            throw exc;
+        }
+        else 
+            formulaire.beSigned(*this);
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+        return ;
+    }      
 }
 
 std::ostream& operator<<(std::ostream& o, Bureaucrat const& rhs)
