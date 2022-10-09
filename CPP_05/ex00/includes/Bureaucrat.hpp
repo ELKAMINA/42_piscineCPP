@@ -8,12 +8,12 @@ class Bureaucrat
 		Bureaucrat();
 		Bureaucrat(Bureaucrat const& twin);
         Bureaucrat(std::string const name);
-        Bureaucrat(std::string const name, int grade);
-        Bureaucrat(int grade);
+        Bureaucrat(std::string const name, unsigned int grade);
+        Bureaucrat(unsigned int grade);
 		Bureaucrat& operator=(Bureaucrat const & rhs);
 		~Bureaucrat();
 		std::string const getName() const;
-        int const getGrade() const;
+        unsigned int const getGrade() const;
         void setGrade(int itg);
         void setHigherGrade();
         void setLowerGrade();
@@ -36,7 +36,7 @@ class Bureaucrat
 
 	private:
 		std::string const _name;
-        int               _grade;
+        unsigned int               _grade;
 };
 
 

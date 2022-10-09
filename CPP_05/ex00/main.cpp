@@ -13,81 +13,34 @@ int main()
     // // std::cout << "Graaadeees :" << fonctionnaire.getGrade() << std::endl;
     // std::cout << fonctionnaire << std::endl;
     // std::cout << George.getName() << std::endl;
-    	{
-		try
-		{
-			std::cout << "==== TESTING GOOD CONSTRUCTORS ====" << std::endl;
-			Bureaucrat	hey = Bureaucrat();
-			Bureaucrat	boss = Bureaucrat("Boss", 1);
-			Bureaucrat	sousmerde = Bureaucrat("Sous Merde", 150);
-			Bureaucrat	moyen = Bureaucrat("Moyen", 70);
-			std::cout << hey << std::endl;
-			std::cout << boss << std::endl;
-			std::cout << sousmerde << std::endl;
-			std::cout << moyen << std::endl;
-			hey = moyen;
-			std::cout << hey << std::endl;
-			boss.setHigherGrade();
-		}
-		catch (std::exception& e)
-		{
-			std::cout << "Error: " << e.what() << std::endl;
-		}
-	}
+    // {
+	// 	std::cout << "==== Constructors of all types ====" << std::endl;
+	// 	Bureaucrat	test1 = Bureaucrat();
+	// 	Bureaucrat	test2 = Bureaucrat("Func1", 1);
+	// 	Bureaucrat	test3 = Bureaucrat("Func2", 150);
+	// 	Bureaucrat	test4 = Bureaucrat("Func3", 70);
+	// 	Bureaucrat	test5 = Bureaucrat("Func4", 200);
+	// 	std::cout << test1 << std::endl;
+	// 	std::cout << test2 << std::endl;
+	// 	std::cout << test3 << std::endl;
+	// 	std::cout << test4 << std::endl;
+	// 	test4 = test3;
+	// 	std::cout << test2 << std::endl;
+	// 	test2.setHigherGrade();
+	// }
 	std::cout << std::endl;
 	// {
-	// 	std::cout << "==== TESTING BAD CONSTRUCTORS ====" << std::endl;
-	// 	try
-	// 	{
-	// 		Bureaucrat	toohigh = Bureaucrat("Too High", 0);
-	// 	}
-	// 	catch (std::exception& e)
-	// 	{
-	// 		std::cout << "Error: " << e.what() << std::endl;
-	// 	}
-	// 	try
-	// 	{
-	// 		Bureaucrat	toolow = Bureaucrat("Too low", 151);
-	// 	}
-	// 	catch (std::exception& e)
-	// 	{
-	// 		std::cout << "Error: " << e.what() << std::endl;
-	// 	}
+	// 	std::cout << "==== Constructors failing ====" << std::endl;
+	// 	Bureaucrat	toohigh = Bureaucrat("Too High", 0);
+	// 	Bureaucrat	toolow = Bureaucrat("Too low", 151);
 	// }
-	// std::cout << std::endl;
-	// {
-	// 	std::cout << "==== TESTING CHANGE GRADE ====" << std::endl;
-	// 	try
-	// 	{
-	// 		Bureaucrat	boss = Bureaucrat("Boss", 2);
-	// 		std::cout << boss << std::endl;
-	// 		std::cout << "Grade up !" << std::endl;
-	// 		boss.setHigherGrade();
-	// 		std::cout << boss << std::endl;
-	// 		std::cout << "Grade up !" << std::endl;
-	// 		boss.setHigherGrade();
-	// 		std::cout << boss << std::endl;
-	// 	}
-	// 	catch (std::exception& e)
-	// 	{
-	// 		std::cout << "Error: " << e.what() << std::endl;
-	// 	}
-
-	// 	try
-	// 	{
-	// 		Bureaucrat	nullos = Bureaucrat("Nullos", 149);
-	// 		std::cout << nullos << std::endl;
-	// 		std::cout << "Grade down !" << std::endl;
-	// 		nullos.setLowerGrade();
-	// 		std::cout << nullos << std::endl;
-	// 		std::cout << "Grade down !" << std::endl;
-	// 		nullos.setHigherGrade();
-	// 		std::cout << nullos << std::endl;
-	// 	}
-	// 	catch (std::exception& e)
-	// 	{
-	// 		std::cout << "Error: " << e.what() << std::endl;
-	// 	}
-	// }
-
+	{
+		std::cout << "==== SetLower vs setHigher ====" << std::endl;
+		Bureaucrat	un = Bureaucrat("un", 73737);
+		std::cout << un << std::endl;
+		un.setHigherGrade();
+		std::cout << un << std::endl;
+		un.setHigherGrade();
+		std::cout << un << std::endl;
+	}
 }
