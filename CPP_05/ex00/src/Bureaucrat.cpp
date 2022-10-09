@@ -117,7 +117,6 @@ Bureaucrat::~Bureaucrat()
 Bureaucrat&    Bureaucrat::operator=( Bureaucrat const & rhs)
 {
     // std::cout << "Bureaucrat :: Assignation operator " << std::endl;
-    std::cout << "RHS GRADE" << rhs._grade << std::endl;
     try
     {
         if (rhs._grade > 150)
@@ -137,6 +136,7 @@ Bureaucrat&    Bureaucrat::operator=( Bureaucrat const & rhs)
     {
         std::cout << "For '" << this->getName() << "'" << " the ";
         std::cerr << e.what() << '\n';
+        return;
     }
     return *this;
 }
@@ -176,6 +176,7 @@ void    Bureaucrat::setHigherGrade()
     {
         std::cout << "For '" << this->getName() << "'" << " the ";
         std::cerr << e.what() << '\n';
+        return ;
     }
 }
 
@@ -197,6 +198,7 @@ void    Bureaucrat::setLowerGrade()
     {
         std::cout << "For '" << this->getName() << "'" << " the ";
         std::cerr << e.what() << '\n';
+        return ;
     }
 }
 
