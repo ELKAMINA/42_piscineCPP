@@ -1,5 +1,5 @@
 #include "../includes/Bureaucrat.hpp"
-#include "../includes/Form.hpp"
+#include "../includes/AForm.hpp"
 #include <iostream>
 #include <string>
 #include <stdexcept>
@@ -118,31 +118,11 @@ Bureaucrat::~Bureaucrat()
 	// std::cout << std::endl;
 }
 
-Bureaucrat*    Bureaucrat::operator=( Bureaucrat const & rhs)
+Bureaucrat&    Bureaucrat::operator=( Bureaucrat const & rhs)
 {
     // std::cout << "Bureaucrat :: Assignation operator " << std::endl;
-    try
-    {
-        if (rhs._grade > 150)
-        {
-            Bureaucrat::GradeTooLowException exc; 
-            throw exc;
-        }
-        else if (rhs._grade < 1)
-        {
-            Bureaucrat::GradeTooHighException exc; 
-            throw exc;
-        }
-        else
-            this->_grade = rhs._grade;
-    }
-    catch(const std::exception& e)
-    {
-        std::cout << "For '" << this->getName() << "'" << " the ";
-        std::cerr << e.what() << '\n';
-        return NULL;
-    }
-    return this;
+    this->_grade = rhs._grade;
+    return *this;
 }
 
 std::string const Bureaucrat::getName() const
@@ -206,14 +186,14 @@ void    Bureaucrat::setLowerGrade()
     }
 }
 
-void    Bureaucrat::signForm(Form &formulaire)
+void    Bureaucrat::signForm(AForm &formulaire)
 {
     
     try
     {
         if (formulaire.isSigned() == true)
         {
-            Form::FormAlreadySigned exc; 
+            AForm::FormAlreadySigned exc; 
             throw exc;
         }
         else 
@@ -224,6 +204,18 @@ void    Bureaucrat::signForm(Form &formulaire)
         std::cerr << e.what() << '\n';
         return ;
     }      
+}
+
+void   Bureaucrat::executeForm(AForm const & form) const
+{
+    try
+    {
+        form.execute(*this);
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << this->getName() << "couldn't sign the forme because " << e.what() << '\n';
+    }
 }
 
 std::ostream& operator<<(std::ostream& o, Bureaucrat const& rhs)

@@ -1,9 +1,26 @@
-#include "./includes/ShrubberyCreationForm.hpp"
+#ifndef SHRUBBERY_CLASS_FORM
+# define SHRUBBERY_CLASS_FORM
+#include <string>
+#include "./Bureaucrat.hpp"
+#include "./AForm.hpp"
+#include <iostream>
 
-ShrubberyCreationForm::ShrubberyCreationForm(/* args */)
-{
-}
+class Bureaucrat;
 
-ShrubberyCreationForm::~ShrubberyCreationForm()
+class ShrubberyCreationForm : public AForm
 {
-}
+	public:
+		ShrubberyCreationForm();
+		ShrubberyCreationForm(ShrubberyCreationForm const& twin);
+        ShrubberyCreationForm(std::string const target);
+		ShrubberyCreationForm& operator=(ShrubberyCreationForm const & rhs);
+		virtual ~ShrubberyCreationForm();
+        virtual std::string         getTarget();
+        virtual void                formexec(Bureaucrat const & executor);
+    
+    private :
+        std::string         _target;
+
+};
+
+#endif
