@@ -63,7 +63,7 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 	// std::cout << std::endl;
 }
 
-std::string         ShrubberyCreationForm::getTarget()
+std::string         ShrubberyCreationForm::getTarget() const
 {
     return (this->_target);
 }
@@ -78,7 +78,7 @@ ShrubberyCreationForm&    ShrubberyCreationForm::operator=( ShrubberyCreationFor
 
 }
 
-void    ShrubberyCreationForm::formexec(Bureaucrat const &executor)
+void    ShrubberyCreationForm::formexec(Bureaucrat const &executor) const
 {
     t_files         trees;
     std::ofstream   myFile;

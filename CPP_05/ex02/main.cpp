@@ -1,7 +1,7 @@
 #include "./includes/Bureaucrat.hpp"
 #include "./includes/AForm.hpp"
-#include "./includes/RobotomyRequestForm.hpp"
 #include "./includes/ShrubberyCreationForm.hpp"
+#include "./includes/RobotomyRequestForm.hpp"
 #include "./includes/PresidentialPardonForm.hpp"
 #include <iostream>
 #include <string>
@@ -48,15 +48,18 @@ int main()
 
 	// /* =================== ShrubberyCreationForm ========================== */
 	Bureaucrat Maire = Bureaucrat("Maire de Puteaux", 2);
-	Bureaucrat Ouvrier = Bureaucrat("Ouvrier", 8);
+	Bureaucrat Ouvrier = Bureaucrat("Ouvrier", 149);
 
-	// ShrubberyCreationForm form1("Chouchou");
-	// form1.getSignature();
+	ShrubberyCreationForm form1("Chouchou");
+	form1.getSignature();
 	// form1.execute(Maire);
+	Maire.executeForm(form1);
+	Ouvrier.executeForm(form1);
 	// RobotomyRequestForm form2;
 	// form2.formexec(Ouvrier);
-	PresidentialPardonForm form3;
-	form3.getSignature();
-	form3.execute(Ouvrier);
-	form3.execute(Maire);
+	// PresidentialPardonForm form3;
+	// form3.getSignature();
+	// form3.execute(Ouvrier);
+	// form3.execute(Maire);
+
 }

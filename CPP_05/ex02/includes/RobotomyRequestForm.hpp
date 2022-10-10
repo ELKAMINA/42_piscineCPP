@@ -15,8 +15,8 @@ class RobotomyRequestForm : public AForm
         RobotomyRequestForm(std::string const target);
 		RobotomyRequestForm& operator=(RobotomyRequestForm const & rhs);
 		virtual ~RobotomyRequestForm();
-        virtual std::string         getTarget();
-        virtual void                formexec(Bureaucrat const & executor);
+        virtual std::string         getTarget() const;
+        virtual void                formexec(Bureaucrat const & executor) const;
     
     private :
         std::string         _target;

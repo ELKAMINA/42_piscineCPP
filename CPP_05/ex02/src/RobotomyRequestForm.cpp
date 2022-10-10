@@ -63,7 +63,7 @@ RobotomyRequestForm::~RobotomyRequestForm()
 	// std::cout << std::endl;
 }
 
-std::string         RobotomyRequestForm::getTarget()
+std::string         RobotomyRequestForm::getTarget() const
 {
     return (this->_target);
 }
@@ -78,7 +78,7 @@ RobotomyRequestForm&    RobotomyRequestForm::operator=( RobotomyRequestForm cons
 
 }
 
-void    RobotomyRequestForm::formexec(Bureaucrat const &executor)
+void    RobotomyRequestForm::formexec(Bureaucrat const &executor) const
 {
     std::cout << "Vrrrrrrrrr...." << std::endl;
     // std::cout << "RAND" << rand() % 2 << std::endl;

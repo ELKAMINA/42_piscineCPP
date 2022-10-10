@@ -63,7 +63,7 @@ PresidentialPardonForm::~PresidentialPardonForm()
 	// std::cout << std::endl;
 }
 
-std::string         PresidentialPardonForm::getTarget()
+std::string         PresidentialPardonForm::getTarget() const
 {
     return (this->_target);
 }
@@ -78,7 +78,7 @@ PresidentialPardonForm&    PresidentialPardonForm::operator=( PresidentialPardon
 
 }
 
-void  PresidentialPardonForm::formexec(Bureaucrat const &executor)
+void  PresidentialPardonForm::formexec(Bureaucrat const &executor) const
 {
     std::cout << this->getTarget() << "Your target has been pardonned by Zaphod Beeblerox..." << std::endl;
 }

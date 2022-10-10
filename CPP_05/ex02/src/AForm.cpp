@@ -157,7 +157,7 @@ void    AForm::beSigned(Bureaucrat& bureaucrat)
         std::cerr << e.what() << '\n';
     }
 }
-
+// About const : 
 unsigned const int  AForm::getGradeFormToExecute() const
 {
     return (this->_toexecute);
@@ -169,7 +169,7 @@ bool    AForm::getSignature()
     return (this->_signed);
 }
 
-void  AForm::execute(Bureaucrat const & executor) const
+void AForm::execute(Bureaucrat const & executor) const
 {
     try
     {
