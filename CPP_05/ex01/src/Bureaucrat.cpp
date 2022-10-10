@@ -118,31 +118,11 @@ Bureaucrat::~Bureaucrat()
 	// std::cout << std::endl;
 }
 
-Bureaucrat*    Bureaucrat::operator=( Bureaucrat const & rhs)
+Bureaucrat&    Bureaucrat::operator=( Bureaucrat const & rhs)
 {
     // std::cout << "Bureaucrat :: Assignation operator " << std::endl;
-    try
-    {
-        if (rhs._grade > 150)
-        {
-            Bureaucrat::GradeTooLowException exc; 
-            throw exc;
-        }
-        else if (rhs._grade < 1)
-        {
-            Bureaucrat::GradeTooHighException exc; 
-            throw exc;
-        }
-        else
-            this->_grade = rhs._grade;
-    }
-    catch(const std::exception& e)
-    {
-        std::cout << "For '" << this->getName() << "'" << " the ";
-        std::cerr << e.what() << '\n';
-        return NULL;
-    }
-    return this;
+    this->_grade = rhs._grade;
+    return *this;
 }
 
 std::string const Bureaucrat::getName() const

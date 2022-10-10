@@ -12,7 +12,7 @@ class Bureaucrat
         Bureaucrat(std::string const name);
         Bureaucrat(std::string const name, unsigned int grade);
         Bureaucrat(unsigned int grade);
-		Bureaucrat* operator=(Bureaucrat const & rhs);
+		Bureaucrat& operator=(Bureaucrat const & rhs);
 		~Bureaucrat();
 		std::string const getName() const;
         unsigned int const  getGrade() const;

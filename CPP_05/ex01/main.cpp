@@ -29,15 +29,16 @@ int main()
 	}
 	/* =================== Tester bad ========================== */
 	Bureaucrat Maire = Bureaucrat("Maire de Puteaux", 4);
-	Bureaucrat Ouvrier = Bureaucrat("Ouvrier", 150);
-	Form Hebergement("Hebergement", 60, 6);
-	Form Peinture("Peinture", 150, 150);
-	Maire.signForm(Hebergement);
-	Form Batiment("Batiment", 60, 4);
-	Ouvrier.signForm(Batiment);
-	Ouvrier.signForm(Peinture);
-	Form test1("Kikou");
-	Form test2;
-	test1 = test2;
-	std::cout << (bool)test1.isSigned() << std::endl;
+	Bureaucrat Ouvrier = Bureaucrat("Ouvrier", 153);
+	Maire = Ouvrier;
+	std::cout << Maire.getName() << std::endl;
+	// Form Hebergement("Hebergement", 60, 6);
+	// Form Peinture("Peinture", 150, 150);
+	// Maire.signForm(Hebergement);
+	// Form Batiment("Batiment", 60, 4);
+	// Ouvrier.signForm(Batiment);
+	// Ouvrier.signForm(Peinture);
+	// Form test1("Kikou");
+	// Form test2;
+	// test1 = test2;
 }
