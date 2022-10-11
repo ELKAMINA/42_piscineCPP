@@ -1,5 +1,5 @@
-#ifndef SHRUBBERY_CLASS_FORM
-# define SHRUBBERY_CLASS_FORM
+#ifndef ROBOTOMY_CLASS_FORM
+# define ROBOTOMY_CLASS_FORM
 #include <string>
 #include "./Bureaucrat.hpp"
 #include "./AForm.hpp"
