@@ -1,14 +1,13 @@
-NAME = relations
+NAME = Bureaucrat_03
 
-SRC = relations.cpp \
-	contact.cpp \
-	phonebook.cpp \
+SRC = main.cpp\
+	
 
 OBJ = $(SRC:.cpp=.o)
 
 CC = c++
 
-FLAG = -Wall -Werror -Wextra -std=c++98
+FLAG = -g3 -Wall -Werror -Wextra -std=c++98 #-fsanitize=address
 
 all : $(NAME)
 

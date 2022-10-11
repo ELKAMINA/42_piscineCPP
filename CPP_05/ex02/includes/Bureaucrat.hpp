@@ -13,7 +13,7 @@ class Bureaucrat
         Bureaucrat(std::string const name, unsigned int grade);
         Bureaucrat(unsigned int grade);
 		Bureaucrat& operator=(Bureaucrat const & rhs);
-		~Bureaucrat();
+		virtual ~Bureaucrat();
 		std::string const getName() const;
         unsigned int const  getGrade() const;
         void                setGrade(int itg);
