@@ -83,7 +83,7 @@ void    RobotomyRequestForm::formexec(Bureaucrat const &executor) const
     std::cout << "Vrrrrrrrrr...." << std::endl;
     // std::cout << "RAND" << rand() % 2 << std::endl;
     if (rand() % 2 == 0)
-        std::cout << this->getTarget() << "Has been robotised..." << std::endl;
+        std::cout << this->getTarget() << " Has been robotised..." << std::endl;
     else
-        std::cout << this->getTarget() << "Has not been robotised..." << std::endl;
+        std::cout << this->getTarget() << " Has not been robotised..." << std::endl;
 }

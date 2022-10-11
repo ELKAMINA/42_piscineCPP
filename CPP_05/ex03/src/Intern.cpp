@@ -1,9 +1,6 @@
+#include "../includes/Intern.hpp"
 #include "../includes/Bureaucrat.hpp"
 #include "../includes/AForm.hpp"
-#include "../includes/ShrubberyCreationForm.hpp"
-#include "../includes/PresidentialPardonForm.hpp"
-#include "../includes/RobotomyRequestForm.hpp"
-#include "../includes/Intern.hpp"
 #include "../includes/files.h"
 #include <fstream>
 #include <iostream>
@@ -25,6 +22,12 @@ Intern::Intern(Intern const& src)
 Intern::~Intern() 
 {
 	// std::cout << " ********** Intern :: Destructeur ************* " << std::endl;
+    for (size_t i = 0; i < 3; i++)
+    {
+        delete this->catalog.forms[i];
+    }
+    
+    
 	// std::cout << std::endl;
 	// std::cout << " **********        ************* " << std::endl;
 	// std::cout << std::endl;
@@ -41,10 +44,27 @@ Intern&    Intern::operator=( Intern const & rhs)
 
 AForm*   Intern::makeForm(std::string formName, std::string target)
 {
-    AForm* allforms[3];
-
-    allforms[0] = new ShrubberyCreationForm("shrubbery form");
-    allforms[1] = new PresidentialPardonForm("presidential form");
-    allforms[2] = new RobotomyRequestForm("robotomy form");
-    
+    try
+    {
+        catalog.formNames[0] = "shrubbery creation";
+        catalog.formNames[1] = "robotomy request";
+        catalog.formNames[2] = "presidential pardon";
+        catalog.forms[0] = new ShrubberyCreationForm(target);
+        catalog.forms[1] = new RobotomyRequestForm(target);
+        catalog.forms[2] = new PresidentialPardonForm(target);
+        for (size_t i = 0; i < 3; i++)
+        {
+            if (formName.compare(catalog.formNames[i]) == 0)
+            {
+                catalog.choosen_form = catalog.forms[i];
+                return (catalog.choosen_form);
+            }
+        }
+        NonExistingform exec;
+        throw exec;   
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
 }

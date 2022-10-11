@@ -67,7 +67,6 @@ Bureaucrat::Bureaucrat(std::string const name, unsigned int grade) : _name(name)
         std::cerr << e.what() << '\n';
         return;
     }
-	// std::cout << " ********** Bureaucrat :: Destructeur ************* " << std::endl;
 	// std::cout << std::endl;
 	// std::cout << " **********        ************* " << std::endl;
 	// std::cout << std::endl;
@@ -104,7 +103,7 @@ Bureaucrat::Bureaucrat(unsigned int grade)
 
 Bureaucrat::Bureaucrat(std::string const name) : _name(name)
 {
-	// std::cout << " ********** Bureaucrat :: Destructeur ************* " << std::endl;
+	// std::cout << " ********** Bureaucrat :: Constructeur param ************* " << std::endl;
 	// std::cout << std::endl;
 	// std::cout << " **********        ************* " << std::endl;
 	// std::cout << std::endl;

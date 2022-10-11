@@ -19,7 +19,7 @@ class AForm
         bool                isSigned() const;
         unsigned const int  getGradeFormToSign() const;
         unsigned const int  getGradeFormToExecute() const;
-        bool                getSignature();
+        bool                getSignature(); // make it private because used only 
         void                beSigned(Bureaucrat &Bureaucrat);
         virtual void        execute(Bureaucrat const & executor) const;
         virtual void        formexec(Bureaucrat const & executor) const = 0;

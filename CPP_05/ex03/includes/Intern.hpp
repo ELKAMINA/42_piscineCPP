@@ -2,6 +2,10 @@
 # define INTERN_CLASS_HPP
 #include <string>
 #include "./Bureaucrat.hpp"
+#include "./files.h"
+#include "../includes/ShrubberyCreationForm.hpp"
+#include "../includes/PresidentialPardonForm.hpp"
+#include "../includes/RobotomyRequestForm.hpp"
 
 class AForm;
 class Bureaucrat;
@@ -23,6 +27,9 @@ class Intern
                 return ("The form doesn't exist");
             }
     };
+
+    private :
+        t_types catalog;
 };
 
 

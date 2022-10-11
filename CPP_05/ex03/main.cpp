@@ -3,6 +3,7 @@
 #include "./includes/ShrubberyCreationForm.hpp"
 #include "./includes/RobotomyRequestForm.hpp"
 #include "./includes/PresidentialPardonForm.hpp"
+#include "./includes/Intern.hpp"
 #include <iostream>
 #include <string>
 // #include "./includes/PresidentialPardonForm.hpp"
@@ -46,15 +47,15 @@ int main()
 	// test1 = test2;
 	// std::cout << (bool)test1.isSigned() << std::endl;
 
-	// /* =================== ShrubberyCreationForm ========================== */
-	Bureaucrat Maire = Bureaucrat("Maire de Puteaux", 2);
-	Bureaucrat Ouvrier = Bureaucrat("Ouvrier", 149);
+	// /* =================== CreationForms ========================== */
+	// Bureaucrat Maire = Bureaucrat("Maire de Puteaux", 2);
+	// Bureaucrat Ouvrier = Bureaucrat("Ouvrier", 149);
 
-	ShrubberyCreationForm form1("Chouchou");
-	form1.getSignature();
-	// form1.execute(Maire);
-	Maire.executeForm(form1);
-	Ouvrier.executeForm(form1);
+	// ShrubberyCreationForm form1("Chouchou");
+	// form1.getSignature();
+	// // form1.execute(Maire);
+	// Maire.executeForm(form1);
+	// Ouvrier.executeForm(form1);
 	// RobotomyRequestForm form2;
 	// form2.formexec(Ouvrier);
 	// PresidentialPardonForm form3;
@@ -62,4 +63,19 @@ int main()
 	// form3.execute(Ouvrier);
 	// form3.execute(Maire);
 
+	// /* Internnnnnn //
+	Intern someRandomIntern;
+	Bureaucrat Maire = Bureaucrat("Maire de Puteaux", 2);
+	Bureaucrat Toto = Bureaucrat("Toto", 149);
+
+	AForm* rrf;
+
+	// rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+	// rrf->getSignature();
+	// rrf->execute(Maire);
+	rrf = someRandomIntern.makeForm("shrubbery creation", "william");
+	std::cout << rrf->isSigned() << std::endl;
+	// rrf->execute(Toto);
+	rrf->beSigned(Maire);
+	rrf->execute(Maire);
 }

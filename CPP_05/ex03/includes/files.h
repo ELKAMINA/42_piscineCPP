@@ -10,5 +10,12 @@ typedef struct s_files
     std::string     name;
 }   t_files;
 
+typedef struct s_formTypes
+{
+    std::string    formNames[3];
+    AForm*          forms[3];
+    AForm*           choosen_form;
+}   t_types;
+
 
 #endif

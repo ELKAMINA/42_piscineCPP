@@ -48,7 +48,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const& src) :
 ShrubberyCreationForm::ShrubberyCreationForm(std::string const target)
 {
     this->_target = target;
-	// std::cout << " ********** ShrubberyCreationForm :: Destructeur ************* " << std::endl;
+	// std::cout << " ********** ShrubberyCreationForm :: Constructeur param ************* " << std::endl;
 	// std::cout << std::endl;
 	// std::cout << " **********        ************* " << std::endl;
 	// std::cout << std::endl;

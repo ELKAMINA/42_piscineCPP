@@ -1,4 +1,4 @@
-NAME = Bureaucrat_02
+NAME = Bureaucrat_03
 
 SRC = main.cpp\
 	src/Bureaucrat.cpp \
@@ -6,6 +6,7 @@ SRC = main.cpp\
 	src/ShrubberyCreationForm.cpp \
 	src/RobotomyRequestForm.cpp \
 	src/PresidentialPardonForm.cpp \
+	src/Intern.cpp \
 
 OBJ = $(SRC:.cpp=.o)
 
