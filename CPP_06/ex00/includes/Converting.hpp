@@ -19,11 +19,19 @@ class Converting
         char        getCharing() const;
         float       getFloating() const;
         double      getDoubling() const;
+        bool        getDispChar() const;
+        bool        getmaxInt () const;
+        bool        getImpoFloat() const;
+        bool        getImpoDouble() const;
+        bool        getnanOrInf() const;
         bool        getDotStatus() const;
-        void        is_single_char(std::string argument);
-        void        is_float(std::string argument);
-        void        make_conversions(std::string argument);
-        void        getRealTypeFromString(std::string argument);
+        void        is_single_char(std::string const argument);
+        void        is_float(std::string const argument);
+        void        is_double(std::string const argument);
+        void        is_int(std::string const argument);
+        void        printable_char(char c);
+        void        make_conversions(std::string const argument);
+        void        getRealTypeFromString(std::string const argument);
         class AmpossiToConvert : public std::exception
         {
             public: 
@@ -44,7 +52,15 @@ class Converting
         float               _floating;
         bool                _dot;
         bool                _ef;
+        bool                _signed;
+        bool                _maxInt;
+        bool                _NonDisplayableChar;
+        bool                _impossbileFloat;
+        bool                _impossbileDouble;
+        bool                _nanorInf;
 
 };
+
+std::ostream & operator<<( std::ostream & o, Converting const& rhs);
 
 #endif

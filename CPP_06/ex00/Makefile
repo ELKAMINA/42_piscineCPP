@@ -1,7 +1,7 @@
-NAME = Bureaucrat_03
+NAME = convert
 
 SRC = main.cpp\
-	
+	src/Converting.cpp\
 
 OBJ = $(SRC:.cpp=.o)
 
