@@ -2,7 +2,7 @@
 #define WHATEVER_CLASS_HPP
 
 template<typename T>
-void    swap(T x, T y)
+void    swap(T& x, T& y)
 {
     T  tmp;
 
