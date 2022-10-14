@@ -3,7 +3,7 @@
 Span::Span(void)
 {
     this->ajout = 0;
-    
+    this->_nbMax = 0;
 }
 
 Span::Span(unsigned int N)
@@ -12,9 +12,32 @@ Span::Span(unsigned int N)
     this->_nbMax = N;
 }
 
+Span::Span(Span const& src)
+{
+    // std::cout << "ajout" << ajout << std::endl;
+    this->ajout = src.ajout;
+	this->_nbMax = src._nbMax;
+    vec.clear();
+    vec.insert(vec.end(), src.vec.begin(), src.vec.end());
+    *this = src;
+}
+
 Span::~Span()
 {
 
+}
+
+Span&    Span::operator=( Span const & rhs)
+{
+    // std::cout << "Span :: Assignation operator." << std::endl;
+    if (this != &rhs)
+    {
+        this->ajout = rhs.ajout;
+        this->_nbMax = rhs._nbMax;
+        vec.clear();
+        vec.insert(vec.end(), rhs.vec.begin(), rhs.vec.end());
+    }
+    return *this;
 }
 
 void    Span::addNumber(unsigned int to_add)
@@ -86,9 +109,36 @@ unsigned int Span::shortestSpan()
 void    Span::getAllNbs()
 {
     std::vector<unsigned int>::iterator i;
-
+    // std::cout << "end" << *this->vec.end() << std::endl;
     for (i = this->vec.begin(); i != this->vec.end(); ++i)
     {
         std::cout << *i << " " << std::endl;
     }
+}
+
+void    Span::OneShot(std::vector<unsigned int>::iterator begin, std::vector<unsigned int>::iterator end)
+{
+    try
+    {
+        for (std::vector<unsigned int>::iterator it = begin; it < end; it++)
+        {
+            if (this->vec.size() == this->_nbMax)
+            {
+                MaxNbadded exc;
+                throw exc;
+            }
+            else
+            {
+                this->vec.push_back(*it);
+                this->ajout++;
+            } 
+        }
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+        return ;
+    }
+    
+    
 }

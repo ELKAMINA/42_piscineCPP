@@ -9,11 +9,14 @@ class Span
 {
     public :
         Span(unsigned int N);
+        Span(Span const& src);
         ~Span();
         void            addNumber(unsigned int to_add);
         unsigned int    shortestSpan();
         unsigned int    longestSpan();
         void            getAllNbs();
+        Span& operator=(Span const &);
+        void            OneShot(std::vector<unsigned int>::iterator begin, std::vector<unsigned int>::iterator end);
 
     private :
         unsigned int                 _nbMax;
