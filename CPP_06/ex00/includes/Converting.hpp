@@ -25,6 +25,8 @@ class Converting
         bool        getImpoDouble() const;
         bool        getnanOrInf() const;
         bool        getDotStatus() const;
+        bool        getMaxDouble() const;
+        bool        getMaxFloat() const;
         void        is_single_char(std::string const argument);
         void        is_float(std::string const argument);
         void        is_double(std::string const argument);
@@ -54,6 +56,8 @@ class Converting
         bool                _ef;
         bool                _signed;
         bool                _maxInt;
+        bool                _maxFloat;
+        bool                _maxDouble;
         bool                _NonDisplayableChar;
         bool                _impossbileFloat;
         bool                _impossbileDouble;

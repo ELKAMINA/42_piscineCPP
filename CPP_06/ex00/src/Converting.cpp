@@ -10,6 +10,7 @@ Converting::Converting()
 	this->_ef = false;
 	this->_signed = false;
 	this->_maxInt = false;
+	this->_maxFloat = false;
 	this->_inting = 0;
 	this->_doubling = 0.0;
 	this->_floating = 0.0f;
@@ -34,6 +35,7 @@ Converting::Converting(Converting const& src)
 	this->_charing = src._charing;
 	this->_inting = src._inting;
 	this->_maxInt = src._maxInt;
+	this->_maxFloat = false;
 	this->_floating = src._floating;
 	this->_doubling = src._doubling;
 	this->_NonDisplayableChar = src._NonDisplayableChar;
@@ -102,7 +104,13 @@ void	Converting::is_double(std::string const argument)
 {
 	if (argument == "nan" || argument == "+inf" || argument == "inf" || argument == "-inf")
 		this->_impossbileFloat = true;
-	this->_doubling = atof(argument.c_str());
+	if (argument.compare("2147483647.0") > 0 || argument.compare("2147483648.0") > 0)
+	{
+		this->_maxDouble = true; 
+		return;
+	}
+	else
+		this->_doubling = atof(argument.c_str());
 	this->_inting = static_cast<int>(this->_doubling);
 	this->_charing = '*';
 	this->_floating = static_cast<float>(this->_doubling);
@@ -195,7 +203,13 @@ void	Converting::is_float(std::string const argos)
 			}
 			else
 			{
-				this->_floating = atof(arg.c_str());
+				if (argument.compare("2147483647.0") > 0 || argument.compare("2147483648.0") > 0)
+				{
+					this->_maxFloat = true; 
+					return;
+				}
+				else
+					this->_floating = atof(arg.c_str());
 				this->_doubling = static_cast<double>(this->_floating);
 				this->_charing = '*';
 				this->_inting = static_cast<int>(this->_floating);
@@ -251,6 +265,16 @@ char         Converting::getCharing() const
     return (this->_charing);
 }
 
+bool         Converting::getMaxFloat() const
+{
+    return (this->_maxFloat);
+}
+
+bool         Converting::getMaxDouble() const
+{
+    return (this->_maxDouble);
+}
+
 bool         Converting::getDispChar() const
 {
     return (this->_NonDisplayableChar);
@@ -297,16 +321,16 @@ std::ostream& operator<<(std::ostream& o, Converting const& rhs)
 		o << "char: impossible" << std::endl;
 	else
 		o << "char: " << rhs.getCharing() << std::endl;
-	if (rhs.getImpoDouble() == true || rhs.getImpoFloat() == true || rhs.getmaxInt() == true)
+	if (rhs.getImpoDouble() == true || rhs.getImpoFloat() == true || rhs.getmaxInt() == true || rhs.getMaxDouble() == true || rhs.getMaxFloat() == true)
 		o << "int: impossible" << std::endl;
 	else
 		o << "int: " << rhs.getInting() << std::endl;
 	o << std::setprecision(1) << std::fixed;
-	if (rhs.getmaxInt() == true)
+	if (rhs.getmaxInt() == true || rhs.getMaxFloat() == true || rhs.getMaxDouble() == true )
 		o << "float: impossible" << std::endl;
 	else
 		o << "float: " << rhs.getFloating() << "f" << std::endl;
-	if (rhs.getmaxInt() == true)
+	if (rhs.getmaxInt() == true || rhs.getMaxDouble() == true )
 		o << "double: impossible" << std::endl;
 	else
 		o << "double: " << rhs.getDoubling() << std::endl;
