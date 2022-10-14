@@ -2,11 +2,13 @@
 
 Span::Span(void)
 {
+    this->ajout = 0;
     
 }
 
 Span::Span(unsigned int N)
 {
+    this->ajout = 0;
     this->_nbMax = N;
 }
 
@@ -22,7 +24,9 @@ void    Span::addNumber(unsigned int to_add)
         if (ajout < this->_nbMax)
         {
             this->vec.push_back(to_add);
+            // std::cout << "vec 0" << *vec.begin() << std::endl;
             this->ajout++;
+            // std::cout << "ajout " << ajout << std::endl;
         }
         else
         {
@@ -35,7 +39,6 @@ void    Span::addNumber(unsigned int to_add)
         std::cerr << e.what() << '\n';
         return ;
     }
-    
 }
 
 unsigned int Span::longestSpan()
@@ -48,36 +51,44 @@ unsigned int Span::longestSpan()
             throw exc;
         }
         std::sort(this->vec.begin(), this->vec.end());
-        return std::distance(this->vec.begin(), this->vec.begin());
-       
+        // this->getAllNbs();
+        return (this->vec[ajout - 1] - this->vec[0]);
     }
     catch(const std::exception& e)
     {
         std::cerr << e.what() << '\n';
         return (0);
     }
-    
 }
 
-// unsigned int Span::shortestSpan()
-// {
-//     unsigned int min;
-//     try
-//     {
-//         for (unsigned int i = 0; i < this->ajout; i++)
-//         {
-//             min = longestSpan();
-//             this->vec.at(i + 1) - this->vec.at(i);
-//             if ((this->vec.at(i + 1) - this->vec.at(i)) < min)
-//             {
-//                 min = this->vec.at(i + 1) - this->vec.at(i);
-//             }
-//         }
-//     }
-//     catch(const std::exception& e)
-//     {
-//         std::cerr << e.what() << '\n';
-//         return (404);
-//     }
-//     return (min);
-// }
+unsigned int Span::shortestSpan()
+{
+    unsigned int min;
+    std::vector<unsigned int>::iterator i;
+    try
+    {
+        std::sort(this->vec.begin(), this->vec.end());
+        min = longestSpan();
+        for (i = this->vec.begin(); i != this->vec.end(); ++i)
+        {
+            if ((*(i + 1)) - (*i) < min)
+                min = ((*(i + 1)) - (*i));
+        }
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+        return (404);
+    }
+    return (min);
+}
+
+void    Span::getAllNbs()
+{
+    std::vector<unsigned int>::iterator i;
+
+    for (i = this->vec.begin(); i != this->vec.end(); ++i)
+    {
+        std::cout << *i << " " << std::endl;
+    }
+}

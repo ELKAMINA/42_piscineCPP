@@ -11,8 +11,9 @@ class Span
         Span(unsigned int N);
         ~Span();
         void            addNumber(unsigned int to_add);
-        // unsigned int    shortestSpan();
+        unsigned int    shortestSpan();
         unsigned int    longestSpan();
+        void            getAllNbs();
 
     private :
         unsigned int                 _nbMax;
