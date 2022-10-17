@@ -50,12 +50,15 @@ void	Harl::complain(std::string level)
 		case 0:
 			std::cout << "[ DEBUG ]" << std::endl;
 			((this->*fptr[0]))();
+			__attribute__((fallthrough));
 		case 1:
 			std::cout << "[ INFO ]" << std::endl;
 			((this->*fptr[1]))();
+			__attribute__((fallthrough));
 		case 2:
 			std::cout << "[ WARNING ]" << std::endl;
 			((this->*fptr[2]))();
+			__attribute__((fallthrough));
 		case 3:
 			std::cout << "[ ERROR ]" << std::endl;
 			((this->*fptr[3]))();
