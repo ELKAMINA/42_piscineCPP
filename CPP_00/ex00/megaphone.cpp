@@ -4,12 +4,16 @@
 int	main(int argc, char *argv[])
 {
 	std::string	my_str;
+	std::string	args;
 	if	(argc > 1)
 	{
 		for(int i = 1; i < argc ; i++)
 		{
-			for(int j = 0; j < strlen(argv[i]); j++)
+			for(size_t j = 0; j < strlen(argv[i]); j++)
+			{
+
 				argv[i][j] = (unsigned char)toupper(argv[i][j]);
+			}
 			my_str = argv[i];
 			std::cout << my_str;
 		}

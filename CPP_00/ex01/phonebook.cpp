@@ -1,6 +1,7 @@
 #include <iostream>
 #include "./contact.hpp"
 #include "./phonebook.hpp"
+#include <stdlib.h>
 
 PhoneBook::PhoneBook( void ) :  Nbcontact(0)
 {
@@ -39,17 +40,20 @@ void	PhoneBook::AddContact(int i, Contact my_contact)
 void	PhoneBook::adding_option(std::string user_entry, PhoneBook *repertory)
 {
 	user_entry.clear();
+	(void)repertory;
 	Contact	newest;
 
-	std::cout << "First name : ";
-	std::cin.ignore();
+	std::cout << "First name : ";	
 	std::getline(std::cin, user_entry);
 	if (std::cin.eof() )
 		exit(1) ;
 	else if (user_entry.empty())
 		return ;
 	else
+	{
 		newest.setfirstname(user_entry);
+		user_entry.clear();
+	}
 	std::cout << "Last name : ";
 	user_entry.clear();
 	std::getline(std::cin, user_entry);

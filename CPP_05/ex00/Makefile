@@ -5,17 +5,15 @@ SRC = main.cpp\
 
 OBJ = $(SRC:.cpp=.o)
 
-CC = c++
+CXX = c++
 
-FLAG = -g3 -Wall -Werror -Wextra -std=c++98 #-fsanitize=address
+CXXFLAGS = -g3 -Wall -Werror -Wextra -std=c++98 #-fsanitize=address
+CPPFLAGS = -I includes
 
 all : $(NAME)
 
-%.o : %.c
-	$(CC) $(FLAG) -c $< -o $@ 
-
 $(NAME) : $(OBJ)
-	$(CC) $(FLAG) -o $(NAME) $(OBJ)
+	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJ)
 
 clean :
 	rm -rf $(OBJ)
