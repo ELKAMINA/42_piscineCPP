@@ -3,9 +3,13 @@
 #include <iostream>
 #include <string>
 
-ScavTrap::ScavTrap( void ) : ClapTrap( ) 
+ScavTrap::ScavTrap( void ) : ClapTrap( )
 {
 	std::cout << "ScavTrap ::Constructeur Scavtrap " << std::endl;
+	this->_name = "Par defaut";
+	this->_Energypoints = 100;
+	this->_hitpoints = 50;
+	this->_AttackDamages = 20;
 }
 
 ScavTrap::ScavTrap( std::string name) : ClapTrap(name) // Quel constructeur appeler a l'appel du constructeur fils?
@@ -38,6 +42,7 @@ ScavTrap::~ScavTrap( void )
 ScavTrap&    ScavTrap::operator=( ScavTrap const & rhs)
 {
     std::cout << "ScavTrap :: Assignation operator called" << std::endl;
+	(void)rhs;
     return *this;
 }
 
