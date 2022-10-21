@@ -5,24 +5,26 @@ SRC = main.cpp\
 
 OBJ = $(SRC:.cpp=.o)
 
-CC = c++
+DEPS = $(OBJ:.o=.d)
 
-FLAG =  -Wall -Werror -Wextra -std=c++98 
+CXX = c++
+
+CXXFLAGS = -Wall -Werror -Wextra -std=c++98
+CPPFLAGS = -MMD
 
 all : $(NAME)
 
-%.o : %.c
-	$(CC) $(FLAG) -c $< -o $@ 
-
 $(NAME) : $(OBJ)
-	$(CC) -o $(NAME) $(OBJ)
+	$(CXX) $(CXXFLAGS) -o  $(NAME) $(OBJ)
 
 clean :
-	rm -rf $(OBJ)
+	rm -rf $(OBJ) $(DEPS)
 
 fclean: clean
 	rm -f $(NAME)
 
-re: fclean all
+re: fclean 
+	make all
 
+-include $(DEPS)
 .PHONY : all clean fclean re

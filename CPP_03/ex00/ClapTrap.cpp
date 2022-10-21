@@ -2,10 +2,12 @@
 #include <string>
 #include <iostream>
 #include <iomanip>
+#include <limits>
 
-ClapTrap::ClapTrap( void ) : _name("Miskine"), _hitpoints(0), _Energypoints(0), _AttackDamages(0)
+ClapTrap::ClapTrap( void ) : _name("Miskine"), _hitpoints(10), _Energypoints(10), _AttackDamages(0)
 {
 	std::cout << " ********** Constructeur par defaut ************* " << std::endl;
+	std::cout << "Claprap - "<< this->_name << " " << std::endl;
 	std::cout << "Starting with : "<< this->_Energypoints << " Energy points." << std::endl;
 	std::cout << "Starting with : "<< this->_hitpoints << " Hit points." << std::endl;
 	std::cout << "Starting with : "<< this->_AttackDamages << " Attack Damages." << std::endl;
@@ -16,7 +18,7 @@ ClapTrap::ClapTrap( void ) : _name("Miskine"), _hitpoints(0), _Energypoints(0), 
 ClapTrap::ClapTrap( std::string name ) : _name(name), _hitpoints(10), _Energypoints(10), _AttackDamages(0)
 {
 	std::cout << " ********** Constructeur par param ************* " << std::endl;
-
+	std::cout << "Claprap - "<< this->_name << " " << std::endl;
 	std::cout << "Starting with : "<< this->_Energypoints << " Energy points." << std::endl;
 	std::cout << "Starting with : "<< this->_hitpoints << " Hit points." << std::endl;
 	std::cout << "Starting with : "<< this->_AttackDamages << " Attack Damages." << std::endl;
@@ -28,9 +30,10 @@ ClapTrap::ClapTrap( std::string name ) : _name(name), _hitpoints(10), _Energypoi
 ClapTrap::ClapTrap( const ClapTrap& src)
 {
 	std::cout << " ********** Constructeur par recopie ************* " << std::endl;
-
-	this->_name = src._name;
+	if	(this != &src)
+		this->_name = src._name;
 	*this = src;
+	std::cout << "Claprap - "<< this->_name << " " << std::endl;
 	std::cout << "Starting with : "<< src._Energypoints << " Energy points." << std::endl;
 	std::cout << "Starting with : "<< src._hitpoints << " Hit points." << std::endl;
 	std::cout << "Starting with : "<< src._AttackDamages << " Attack Damages." << std::endl;
@@ -74,7 +77,7 @@ void ClapTrap::beRepaired(unsigned int amount)
 	{
 		this->_Energypoints --;
 		if (this->_hitpoints + amount < this->_hitpoints)
-			this->_hitpoints = UINT32_MAX;
+			this->_hitpoints = std::numeric_limits<unsigned int>::max();
 		else		
 			this->_hitpoints += amount;
 		std::cout << "Let's get some reparation" << std::endl;
@@ -97,4 +100,46 @@ void ClapTrap::takeDamage(unsigned int amount)
 	}
 	else
 		std::cout << "Maaan ! You can't breathe ... You Deaaad Bro' ..." << std::endl;	
+}
+
+// Getter 
+std::string	ClapTrap::getName() const
+{
+	return (this->_name);
+}
+
+unsigned int	ClapTrap::getHitpoints() const
+{
+	return (this->_hitpoints);
+}
+
+unsigned int	ClapTrap::getEnergypoints() const
+{
+	return (this->_Energypoints);
+}
+
+unsigned int	ClapTrap::getAttackDamages() const
+{
+	return (this->_AttackDamages);
+}
+
+// Setter 
+void	ClapTrap::setName(std::string name)
+{
+	this->_name = name;
+}
+
+void	ClapTrap::setHitpoints(unsigned int hitpoints)
+{
+	this->_hitpoints = hitpoints;
+}
+
+void	ClapTrap::setEnergypoints(unsigned int enpoints)
+{
+	this->_Energypoints = enpoints;
+}
+
+void	ClapTrap::setAttackDamages(unsigned int damages)
+{
+	this->_AttackDamages = damages;
 }
