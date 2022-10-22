@@ -18,6 +18,11 @@ class ScavTrap :virtual public ClapTrap
 		static const int	st_hitpoints = 100;
 		static const int	st_enpoints = 50;
 		static const int	st_damages = 20;
+
+	private :
+	// std::string		_name;
+
+
 };
 
 #endif

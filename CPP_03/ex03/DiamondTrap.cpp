@@ -5,13 +5,14 @@
 #include <iostream>
 #include <iomanip>
 
-DiamondTrap::DiamondTrap( void ) : FragTrap(), ScavTrap()
+DiamondTrap::DiamondTrap( void ) : FragTrap("PasDeNom_clap_name"), ScavTrap("PasDeNom_clap_name")
 {
 	std::cout << " ********** DiamondTrap :: Constructeur par defaut ************* " << std::endl;
 	std::cout << std::endl;
+	this->_name = "PasDeNom_clap_name";
 	std::cout << "DiamondTrap :: My name is : "<< this->_name << std::endl;
-	std::cout << "DiamondTrap :: Starting with : "<< FragTrap::_Energypoints << " Energy points." << std::endl;
-	std::cout << "DiamondTrap :: Starting with : "<< ScavTrap::_hitpoints << " Hit points." << std::endl;
+	std::cout << "DiamondTrap :: Starting with : "<< ScavTrap::_Energypoints << " Energy points." << std::endl;
+	std::cout << "DiamondTrap :: Starting with : "<< FragTrap::_hitpoints << " Hit points." << std::endl;
 	std::cout << "DiamondTrap :: Starting with : "<< FragTrap::_AttackDamages << " Attack Damages." << std::endl;
 	std::cout << std::endl;
 	std::cout << " ********************************************** " << std::endl;

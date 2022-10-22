@@ -18,6 +18,11 @@ class FragTrap : virtual public ClapTrap
 		static const int	ft_hitpoints = 100;
 		static const int	ft_enpoints = 100;
 		static const int	ft_damages = 30;
+
+	private :
+	// std::string		_name;
+
+
 };
 
 #endif
