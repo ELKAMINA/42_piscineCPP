@@ -71,7 +71,7 @@ int	main()
 	std::cout << std::endl;
 	for (size_t i = 0; i < 11; i++)
 	{
-		joueur_un.attack("Mok");
+		joueur_un.attack("Haho");
 		joueur_un.takeDamage(3);
 		std::cout << std::endl;
 		std::cout << std::endl;

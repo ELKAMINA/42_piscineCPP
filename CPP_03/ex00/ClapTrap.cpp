@@ -6,8 +6,8 @@
 
 ClapTrap::ClapTrap( void ) : _name("Miskine"), _hitpoints(10), _Energypoints(10), _AttackDamages(0)
 {
-	std::cout << " ********** Constructeur par defaut ************* " << std::endl;
-	std::cout << "Claprap - "<< this->_name << " " << std::endl;
+	std::cout << " ********** ClapTrap : Constructeur par defaut ************* " << std::endl;
+	std::cout << "ClapTrap - "<< this->_name << " " << std::endl;
 	std::cout << "Starting with : "<< this->_Energypoints << " Energy points." << std::endl;
 	std::cout << "Starting with : "<< this->_hitpoints << " Hit points." << std::endl;
 	std::cout << "Starting with : "<< this->_AttackDamages << " Attack Damages." << std::endl;
@@ -17,8 +17,8 @@ ClapTrap::ClapTrap( void ) : _name("Miskine"), _hitpoints(10), _Energypoints(10)
 
 ClapTrap::ClapTrap( std::string name ) : _name(name), _hitpoints(10), _Energypoints(10), _AttackDamages(0)
 {
-	std::cout << " ********** Constructeur par param ************* " << std::endl;
-	std::cout << "Claprap - "<< this->_name << " " << std::endl;
+	std::cout << " ********** ClapTrap : Constructeur par param ************* " << std::endl;
+	std::cout << "ClapTrap - "<< this->_name << " " << std::endl;
 	std::cout << "Starting with : "<< this->_Energypoints << " Energy points." << std::endl;
 	std::cout << "Starting with : "<< this->_hitpoints << " Hit points." << std::endl;
 	std::cout << "Starting with : "<< this->_AttackDamages << " Attack Damages." << std::endl;
@@ -29,11 +29,11 @@ ClapTrap::ClapTrap( std::string name ) : _name(name), _hitpoints(10), _Energypoi
 
 ClapTrap::ClapTrap( const ClapTrap& src)
 {
-	std::cout << " ********** Constructeur par recopie ************* " << std::endl;
+	std::cout << " ********** ClapTrap : Constructeur par recopie ************* " << std::endl;
 	if	(this != &src)
 		this->_name = src._name;
 	*this = src;
-	std::cout << "Claprap - "<< this->_name << " " << std::endl;
+	std::cout << "ClapTrap - "<< this->_name << " " << std::endl;
 	std::cout << "Starting with : "<< src._Energypoints << " Energy points." << std::endl;
 	std::cout << "Starting with : "<< src._hitpoints << " Hit points." << std::endl;
 	std::cout << "Starting with : "<< src._AttackDamages << " Attack Damages." << std::endl;
@@ -43,12 +43,12 @@ ClapTrap::ClapTrap( const ClapTrap& src)
 
 ClapTrap::~ClapTrap( void )
 {
-	std::cout << " ********** Destructeur par defaut ************* " << std::endl;
+	std::cout << " ********** ClapTrap : Destructeur par defaut ************* " << std::endl;
 }
 
 ClapTrap&    ClapTrap::operator=( ClapTrap const & rhs)
 {
-    std::cout << "Assignation operator." << std::endl;
+    std::cout << "ClapTrap : Assignation operator." << std::endl;
     this->_name = rhs._name;
 	this->_hitpoints = rhs._hitpoints;
 	this->_Energypoints = rhs._Energypoints;
@@ -80,12 +80,12 @@ void ClapTrap::beRepaired(unsigned int amount)
 			this->_hitpoints = std::numeric_limits<unsigned int>::max();
 		else		
 			this->_hitpoints += amount;
-		std::cout << "Let's get some reparation" << std::endl;
-		std::cout << "Now we have : " << this->_Energypoints << " Energy points. " << std::endl;
-		std::cout << "Now we have : " << this->_hitpoints << " Hit points. " << std::endl;
+		std::cout << "ClapTrap : Let's get some reparation" << std::endl;
+		std::cout << "ClapTrap : Now we have : " << this->_Energypoints << " Energy points. " << std::endl;
+		std::cout << "ClapTrap : Now we have : " << this->_hitpoints << " Hit points. " << std::endl;
 	}
 	else
-		std::cout << "Maaan ! You can't breathe ... You Deaaad Bro'..." << std::endl;
+		std::cout << "ClapTrap : Maaan ! You can't breathe ... You Deaaad Bro'..." << std::endl;
 }
 
 void ClapTrap::takeDamage(unsigned int amount)
@@ -96,10 +96,10 @@ void ClapTrap::takeDamage(unsigned int amount)
 		this->_hitpoints -= amount;
 	if (this->_Energypoints > 0 && this->_hitpoints > 0)
 	{
-		std::cout << "Oupsie " << this->_name << " received " << amount << " blows wounds. " << this->_hitpoints << " round(s) left " << std::endl;
+		std::cout << "ClapTrap : Oupsie " << this->_name << " received " << amount << " blows wounds. " << this->_hitpoints << " round(s) left " << std::endl;
 	}
 	else
-		std::cout << "Maaan ! You can't breathe ... You Deaaad Bro' ..." << std::endl;	
+		std::cout << "ClapTrap : Maaan ! You can't breathe ... You Deaaad Bro' ..." << std::endl;	
 }
 
 // Getter 

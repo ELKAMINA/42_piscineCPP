@@ -7,7 +7,7 @@
 ClapTrap::ClapTrap( void ) : _name("Miskine"), _hitpoints(10), _Energypoints(10), _AttackDamages(0)
 {
 	std::cout << "\e[0;34m ********** ClapTrap : Constructeur par defaut ************* \e[0m" << std::endl;
-	std::cout << "\e[0;34mClaprap - "<< this->_name << " " << std::endl;
+	std::cout << "\e[0;34mClapTrap - "<< this->_name << " " << std::endl;
 	std::cout << "\e[0;34mStarting with : "<< this->_Energypoints << " Energy points.\e[0m" << std::endl;
 	std::cout << "\e[0;34mStarting with : "<< this->_hitpoints << " Hit points.\e[0m" << std::endl;
 	std::cout << "\e[0;34mStarting with : "<< this->_AttackDamages << " Attack Damages.\e[0m" << std::endl;
@@ -18,7 +18,7 @@ ClapTrap::ClapTrap( void ) : _name("Miskine"), _hitpoints(10), _Energypoints(10)
 ClapTrap::ClapTrap( std::string name ) : _name(name), _hitpoints(10), _Energypoints(10), _AttackDamages(0)
 {
 	std::cout << "\e[0;34m ********** ClapTrap : Constructeur par param ************* \e[0m" << std::endl;
-	std::cout << "\e[0;34mClaprap - "<< this->_name << " " << std::endl;
+	std::cout << "\e[0;34mClapTrap - "<< this->_name << " " << std::endl;
 	std::cout << "\e[0;34mStarting with : "<< this->_Energypoints << " Energy points.\e[0m" << std::endl;
 	std::cout << "\e[0;34mStarting with : "<< this->_hitpoints << " Hit points.\e[0m" << std::endl;
 	std::cout << "\e[0;34mStarting with : "<< this->_AttackDamages << " Attack Damages.\e[0m" << std::endl;
@@ -33,7 +33,7 @@ ClapTrap::ClapTrap( const ClapTrap& src)
 	if	(this != &src)
 		this->_name = src._name;
 	*this = src;
-	std::cout << "\e[0;34mClaprap - "<< this->_name << " " << std::endl;
+	std::cout << "\e[0;34mClapTrap - "<< this->_name << " " << std::endl;
 	std::cout << "\e[0;34mStarting with : "<< src._Energypoints << " Energy points.\e[0m" << std::endl;
 	std::cout << "\e[0;34mStarting with : "<< src._hitpoints << " Hit points.\e[0m" << std::endl;
 	std::cout << "\e[0;34mStarting with : "<< src._AttackDamages << " Attack Damages.\e[0m" << std::endl;
