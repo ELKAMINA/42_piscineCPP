@@ -7,7 +7,7 @@ class ClapTrap
 	public :
 		ClapTrap( void ); // Constructeur par defaut
 		ClapTrap( std::string name); // Constructeur ac param
-		ClapTrap( ClapTrap const& ); // Constructeur par recopie
+		ClapTrap( ClapTrap const& src); // Constructeur par recopie
 		~ClapTrap( void ); // Destructeur
 		ClapTrap& 		operator=(ClapTrap const &); // operateur d'assignation = binaire
 		std::string		getName() const;

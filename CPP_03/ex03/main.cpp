@@ -22,5 +22,7 @@ int	main()
 		//DiamondTrap child1 = DiamondTrap("Fiston_1");
 		DiamondTrap child1("Fiston_1");
 		child1.whoAmI();
+		child1.guardGate();
+		child1.highFivesGuys();
 	}
 }

@@ -19,7 +19,7 @@ DiamondTrap::DiamondTrap( void ) : FragTrap("PasDeNom_clap_name"), ScavTrap("Pas
 	std::cout << std::endl;
 }
 
-DiamondTrap::DiamondTrap( std::string name ) : FragTrap(name), ScavTrap(name)
+DiamondTrap::DiamondTrap( std::string name ) : ClapTrap(name + "_clap_name"), FragTrap(name), ScavTrap(name)
 {
 	ClapTrap::_name = name + "_clap_name";
 	this->_name = name;
@@ -38,7 +38,7 @@ DiamondTrap::DiamondTrap( std::string name ) : FragTrap(name), ScavTrap(name)
 }
 /* Diff entre operateur d'assignation et constructeur de copie : https://fr.gadget-info.com/difference-between-copy-constructor#:~:text=Le%20constructeur%20de%20copie%20initialise,autre%20objet%20qui%20existe%20d%C3%A9j%C3%A0.&text=(1)%20Le%20constructeur%20de%20copie,initialis%C3%A9%20avec%20un%20objet%20existant. */
 
-DiamondTrap::DiamondTrap( const DiamondTrap& src) : FragTrap(*this), ScavTrap(*this)
+DiamondTrap::DiamondTrap( const DiamondTrap& src) : ClapTrap(*this), FragTrap(*this), ScavTrap(*this)
 {
 	std::cout << " ********** DiamondTrap :: Constructeur par recopie ************* " << std::endl;
 	std::cout << std::endl;

@@ -14,7 +14,7 @@ class DiamondTrap : public FragTrap, public ScavTrap
 	public :
 		DiamondTrap( void ); // Constructeur par defaut
 		DiamondTrap( std::string name); // Constructeur ac param
-		DiamondTrap( DiamondTrap const& ); // Constructeur par recopie
+		DiamondTrap( DiamondTrap const& src); // Constructeur par recopie
 		~DiamondTrap( void ); // Destructeur
 		DiamondTrap& operator=(DiamondTrap const &); // operateur d'assignation = binaire
 		void	attack(const std::string& target);
